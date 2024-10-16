@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JS85cEMU Help</title>
+<meta charset="UTF-8">
+<style>
+    body {text-align: center;}
+
+    .menulink {
+        padding-left: 10px;
+        padding-right: 10px;
+        font-weight: bold;
+    }
+</style>
+</head>
+<body>
+
+<h1>JS85cEMU Help</h1>
+
+<h3><a href="faq_ru.html">Русский</a></h3>
+
+<hr>
+<h3 style="margin-top: 5px;margin-bottom: 5px;">Menu</h3>
+<a class="menulink" href="help.html">Main page</a>
+<a class="menulink" href="interface.html">Emulator interface</a><br>
+<a class="menulink" href="panel.html">Working with the options panel</a>
+<a class="menulink" href="debug.html">Working with the Debugger</a>
+<a class="menulink" href="uman.html">Unofficial manual for MK85C</a><br>
+<a class="menulink" href="faq.html">Frequently asked questions (FAQ)</a>
+<span class="menulink">Frequently asked questions (FAQ)</span>
+<hr>
+
+<h3>Frequently asked questions (FAQ)</h3>
+
+<p style="text-align: left;">
+    &nbsp;&nbsp;&nbsp;&nbsp;<b>Q:</b> How to use the encryptor? Can not understand anything!<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;<b>A:</b> Read the unofficial guide, which contains all the information on working with the encryptor.
+    The manual is available in <a href="uman_ru.html"><b>HTML</b></a>
+    and <a href="http://mk.bs0dd.net/mk85c/AZIMUT.pdf" target="_blank"><b>PDF</b></a> (Russian only) versions.
+</p>
+
+<img src="manual.jpg" alt="manual" height="300px"><br><br>
+
+<p style="text-align: left;">
+    &nbsp;&nbsp;&nbsp;&nbsp;<b>Q:</b> Why does the encryptor show a question mark?<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;<b>A:</b> You probably created a new RAM image, but it was not initialized (initial settings writing).
+    For manual initialization, just press the "начальная установка" (initial setup) button, after which the encryptor will be tested and the RAM will be initialized.
+    You can skip the test using the "Fast init" button on the options panel. You can read about further configuration in the <a href="uman.html#getsta"><b>manual</b></a>.
+</p>
+<img src="noninit.png" alt="noninit"><br><br>
+
+<p style="text-align: left;">
+    &nbsp;&nbsp;&nbsp;&nbsp;<b>Q:</b> Why does the encryptor display the string "<b>** МК-85С **</b>" and does not perform any actions?<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;<b>A:</b> The encryptor is initialized, but not yet configured. To start the configuration, you need to enter (not shown) the code word <b>"АЗИМУТ"</b> (azimuth).
+    You can read about further configuration in the <a href="uman.html#getsta"><b>manual</b></a>.
+</p>
+<img src="uman/welc.png" alt="welc"><br><br>
+
+<p style="text-align: left;">
+    &nbsp;&nbsp;&nbsp;&nbsp;<b>Q:</b> Why does the encryptor display the string "<b> А З И М У Т</b>" and does not perform any actions?<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;<b>A:</b> The encryptor is locked and waiting for a password to be entered. After 25 incorrectly entered characters, for security purposes, the encryptor will <b>ERASE</b> all information in RAM.
+    Read more <a href="uman_ru.html#power"><b>here</b></a>.
+</p>
+<img src="uman/wel.png" alt="wel"><br><br>
+
+<p style="text-align: left;">
+    &nbsp;&nbsp;&nbsp;&nbsp;<b>Q:</b> How can I get a DKL (LTK) for the encryptor?<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;<b>A:</b> A long-term key can be generated directly in the emulator using the <a href="xchg.html"><b>"Xchanger" utility</b></a> (the "New DKL" button).
+    Alternatively, <a href="http://mk.bs0dd.net/mk85c/DKLKM85C.zip"><b>DKLKM85C</b></a> program
+    or <a href="https://github.com/kaseiiro/mk85"><b>utility</b></a> for Python by kaseiiro is available.
+</p>
+<img src="uman/d1.png" alt="d1"><br><br>
+
+<p style="text-align: left;">
+    &nbsp;&nbsp;&nbsp;&nbsp;<b>Q:</b> What is <b>"model Б"</b> and why does pressing this button only change the RAM value and the appearance of some keys?<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;<b>A:</b> The <b>"Switch to model Б/С"</b> button is used to switch the emulator between MK85C and MK85Б (banking) emulation modes.
+    The MK85Б (very rare even in comparison with the MK85C) has other keys in the number block (on the case it is still designated as MK85C),
+    is equipped with 4KB of RAM and uses its own firmware to encrypt bank advice. It was used by employees of the Central Bank of the Russian Federation,
+    but unlike the MK85C, it is not commercial, and, according to some information, is intended only for official use.
+    For this reason, at this moment I can't add ROM to the emulator, so mode Б only changes the appearance of the keys and expands the RAM, the firmware
+    (not available publicly) must be loaded manually. 
+</p>
+<img src="../bitmaps/js85b.png" alt="js85b" width="400px">
+
+<hr>
+<h3 style="margin-top: 5px;margin-bottom: 5px;">Menu</h3>
+<a class="menulink" href="help.html">Main page</a>
+<a class="menulink" href="interface.html">Emulator interface</a><br>
+<a class="menulink" href="panel.html">Working with the options panel</a>
+<a class="menulink" href="debug.html">Working with the Debugger</a>
+<a class="menulink" href="uman.html">Unofficial manual for MK85C</a><br>
+<a class="menulink" href="faq.html">Frequently asked questions (FAQ)</a>
+<span class="menulink">Frequently asked questions (FAQ)</span>
+<hr>
+
+</body>
+</html> 

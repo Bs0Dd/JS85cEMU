@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Справка по JS85cEMU</title>
+<meta charset="UTF-8">
+<style>
+    body {text-align: center;}
+
+    .menulink {
+        padding-left: 10px;
+        padding-right: 10px;
+        font-weight: bold;
+    }
+</style>
+</head>
+<body>
+
+<h1>Справка по JS85cEMU</h1>
+
+<h3><a href="faq.html">English</a></h3>
+
+<hr>
+<h3 style="margin-top: 5px;margin-bottom: 5px;">Меню</h3>
+<a class="menulink" href="help_ru.html">Главная страница</a>
+<a class="menulink" href="interface_ru.html">Интерфейс эмулятора</a><br>
+<a class="menulink" href="panel_ru.html">Работа с панелью опций</a>
+<a class="menulink" href="debug_ru.html">Работа с Дебаггером</a>
+<a class="menulink" href="xchg_ru.html">Работа с Xchanger</a><br>
+<a class="menulink" href="uman_ru.html">Неофициальное руководство для МК85С</a><br>
+<span class="menulink">Часто задаваемые вопросы (FAQ)</span>
+<hr>
+
+<h3>Часто задаваемые вопросы (FAQ)</h3>
+
+<p style="text-align: left;">
+    &nbsp;&nbsp;&nbsp;&nbsp;<b>Q:</b> Как пользоваться шифратором? Ничего не понятно!<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;<b>A:</b> Прочитайте неофициальное руководство, в котором содержится вся информация по работе с шифратором.
+    Руководство доступно в <a href="uman_ru.html"><b>HTML</b></a>
+    и <a href="http://mk.bs0dd.net/mk85c/AZIMUT.pdf" target="_blank"><b>PDF</b></a> (только русский) версиях.
+</p>
+
+<img src="manual.jpg" alt="manual" height="300px"><br><br>
+
+<p style="text-align: left;">
+    &nbsp;&nbsp;&nbsp;&nbsp;<b>Q:</b> Почему шифратор показывает вопросительный знак?<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;<b>A:</b> Вероятно, вы создали новый образ ОЗУ, но не была произведена его инициализация (запись начальных установок).
+    Для ручной инициализации достаточно нажать клавишу "начальная установка", после чего будет произведен тест шифратора и инициализация ОЗУ.
+    Тест можно пропустить, используя кнопку "Fast init" на панели опций. О дальнейшей настройке можно прочитать в <a href="uman_ru.html#getsta"><b>руководстве</b></a>.
+</p>
+<img src="noninit.png" alt="noninit"><br><br>
+
+<p style="text-align: left;">
+    &nbsp;&nbsp;&nbsp;&nbsp;<b>Q:</b> Почему шифратор показывает строку "<b>** МК-85С **</b>" и не выполняет никаких действий?<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;<b>A:</b> Шифратор инициализирован, но еще не настроен. Для начала настройки нужно набрать (не показывается) кодовое слово <b>"АЗИМУТ"</b>.
+    О дальнейшей настройке можно прочитать в <a href="uman_ru.html#getsta"><b>руководстве</b></a>.
+</p>
+<img src="uman/welc.png" alt="welc"><br><br>
+
+<p style="text-align: left;">
+    &nbsp;&nbsp;&nbsp;&nbsp;<b>Q:</b> Почему шифратор показывает строку "<b> А З И М У Т</b>" и не выполняет никаких действий?<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;<b>A:</b> Шифратор заблокирован и ожидает ввода пароля. После 25 неправильно введеных символов в целях безопасности шифратор <b>СОТРЕТ</b> всю информацию в ОЗУ.
+    Подробнее <a href="uman_ru.html#power"><b>здесь</b></a>.
+</p>
+<img src="uman/wel.png" alt="wel"><br><br>
+
+<p style="text-align: left;">
+    &nbsp;&nbsp;&nbsp;&nbsp;<b>Q:</b> Каким образом можно получить ДКЛ для шифратора?<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;<b>A:</b> Долговременный ключ можно сгенерировать прямо в эмуляторе, используя <a href="xchg_ru.html"><b>утилиту "Xchanger"</b></a> (кнопка "New DKL").
+    В качестве альтернативы доступна программа <a href="http://mk.bs0dd.net/mk85c/DKLKM85C.zip"><b>DKLKM85C</b></a>
+    или <a href="https://github.com/kaseiiro/mk85"><b>утилита</b></a> для Python от kaseiiro.
+</p>
+<img src="uman/d1.png" alt="d1"><br><br>
+
+<p style="text-align: left;">
+    &nbsp;&nbsp;&nbsp;&nbsp;<b>Q:</b> Что за <b>"model Б"</b> и почему при нажатии на эту кнопку меняется только объем ОЗУ и вид некоторых клавиш?<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;<b>A:</b> Кнопка <b>"Switch to model Б/С"</b> используется для переключения эмулятора между режимами эмуляции МК85С и МК85Б (банковский).
+    МК85Б (очень редкий даже в сравнении с МК85С) имеет другие клавиши в цифровом блоке (на корпусе по прежнему обозначен как МК85С),
+    оснащен 4КБ ОЗУ и использует собственную прошивку для шифрования банковских авизо. Он применялся сотрудниками ЦБ РФ, но в отличии от МК85С не является коммерческим,
+    а также, по некоторым сведениям, предназначен только для служебного пользования. По этой причине на данный момент я не могу добавить ПЗУ в эмулятор,
+    поэтому режим Б лишь изменяет вид клавиш и расширяет ОЗУ, прошивку (недоступную публично) необходимо загружать вручную. 
+</p>
+<img src="../bitmaps/js85b.png" alt="js85b" width="400px">
+
+<hr>
+<h3 style="margin-top: 5px;margin-bottom: 5px;">Меню</h3>
+<a class="menulink" href="help_ru.html">Главная страница</a>
+<a class="menulink" href="interface_ru.html">Интерфейс эмулятора</a><br>
+<a class="menulink" href="panel_ru.html">Работа с панелью опций</a>
+<a class="menulink" href="debug_ru.html">Работа с Дебаггером</a>
+<a class="menulink" href="xchg_ru.html">Работа с Xchanger</a><br>
+<a class="menulink" href="uman_ru.html">Неофициальное руководство для МК85С</a><br>
+<span class="menulink">Часто задаваемые вопросы (FAQ)</span>
+<hr>
+
+</body>
+</html> 

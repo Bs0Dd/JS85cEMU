@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Справка по JS85cEMU</title>
+<meta charset="UTF-8">
+<style>
+    body {text-align: center;}
+
+    .menulink {
+        padding-left: 10px;
+        padding-right: 10px;
+        font-weight: bold;
+    }
+
+    .una {
+        color: darkred;
+    }
+
+    #soot {
+        border: 1px solid black;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #soot th, #soot td {
+        border: 1px solid black;
+        padding-top: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .gam td {
+        border: 1px solid black;
+        width: 25px;
+    }
+</style>
+</head>
+<body>
+
+<h1>Справка по JS85cEMU</h1>
+
+<h3><a href="uman.html">English</a></h3>
+
+<hr>
+<h3 style="margin-top: 5px;margin-bottom: 5px;">Меню</h3>
+<a class="menulink" href="help_ru.html">Главная страница</a>
+<a class="menulink" href="interface_ru.html">Интерфейс эмулятора</a><br>
+<a class="menulink" href="panel_ru.html">Работа с панелью опций</a>
+<a class="menulink" href="debug_ru.html">Работа с Дебаггером</a>
+<a class="menulink" href="xchg_ru.html">Работа с Xchanger</a><br>
+<span class="menulink">Неофициальное руководство для МК85С</span><br>
+<a class="menulink" href="faq_ru.html">Часто задаваемые вопросы (FAQ)</a>
+<hr>
+
+<h2>Неофициальное руководство для шифратора "АНКРИПТ"<br>
+(Электроника МК-85С)<br>
+<i style="font-size: 15px;font-weight: normal;"><b>HTML</b> вариант, версия <b>1.2</b><br>
+<a href="http://mk.bs0dd.net/mk85c/AZIMUT.pdf" target="_blank"><b>PDF вариант</b></a></i></h2>
+
+<img src="uman/psa.png" alt="psa"><br><br>
+
+<img style="padding-right: 200px;" src="../bitmaps/realmk.jpg" alt="rea" height="200px"><br><br>
+<img style="padding-left: 200px;" src="../bitmaps/js85c.png" alt="emu" height="200px"><br><br><br>
+
+<b>2024 © Bs0Dd, MaFrance351, rpocc, xff, kaseiiro</b><br><br>
+
+<hr style="border:none;border-top: 2px dashed;">
+
+<h4>Содержание</h4>
+
+<ol style="text-align: left;">
+    <li><a href="#getsta"><b>Начало работы</b></a></li>
+    <li><a href="#power"><b>Включение шифратора</b></a></li>
+    <li><a href="#spke"><b>Обозначение специальных клавиш</b></a></li>
+    <li><a href="#fkupr"><b>Функции клавиш с модификатором УПР</b></a></li>
+    <li><a href="#colbu"><b>Цветные подписи к клавишам</b></a></li>
+    <li><a href="#segm"><b>Обозначение сегментов на дисплее</b></a></li>
+    <li><a href="#encr"><b>Режим шифрования данных</b></a></li>
+    <li><a href="#decr"><b>Режим расшифровки данных</b></a></li>
+    <li><a href="#dklc"><b>Режим замены долговременного ключа</b></a></li>
+    <li><a href="#corr"><b>Коррекция искажений при расшифровке</b></a></li>
+    <li><a href="#infos"><b>Сведения о устройстве</b></a></li>
+</ol><br>
+
+<div style="text-align: left;"><b>Ссылки:</b></div>
+
+<ul style="text-align: left;">
+    <li><a target="_blank" href="https://b3mk.ru/2024/09/20/mk85c_details/">https://b3mk.ru/2024/09/20/mk85c_details/</a></li>
+    <li><a target="_blank" href="https://habr.com/ru/users/MaFrance351/publications/articles/">https://habr.com/ru/users/MaFrance351/publications/articles/</a></li>
+    <li><a target="_blank" href="https://web.archive.org/web/20080612123243/http://www.taswegian.com/MOSCOW/mk-85c.html">https://web.archive.org/web/20080612123243/http://www.taswegian.com/MOSCOW/mk-85c.html</a></li>
+    <li><a target="_blank" href="http://www.leningrad.su/museum/show_calc.php?n=698">http://www.leningrad.su/museum/show_calc.php?n=698</a></li>
+    <li><a target="_blank" href="https://coollib.cc/b/292195/read">https://coollib.cc/b/292195/read</a></li>
+    <li><a target="_blank" href="https://ru.wikipedia.org/wiki/%D0%AD%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%BE%D0%BD%D0%B8%D0%BA%D0%B0_%D0%9C%D0%9A-85">https://ru.wikipedia.org/wiki/Электроника_МК-85</a></li>
+    <li><a target="_blank" href="https://web.archive.org/web/20080103055330/http://www.ancort.ru/fea_ancript.htm">https://web.archive.org/web/20080103055330/http://www.ancort.ru/fea_ancript.htm</a></li>
+    <li><a target="_blank" href="https://www.electronics.ru/files/article_pdf/0/article_617_924.pdf">https://www.electronics.ru/files/article_pdf/0/article_617_924.pdf</a></li>
+    <li><a target="_blank" href="https://mk.bs0dd.net/piotr433/index.htm">https://mk.bs0dd.net/piotr433/index.htm</a></li>
+    <li><a target="_blank" href="https://github.com/kaseiiro/mk85">https://github.com/kaseiiro/mk85</a></li>
+    <li><a target="_blank" href="https://retro-computer.ru/home.aspx#/item/MK-85C">https://retro-computer.ru/home.aspx#/item/MK-85C</a></li>
+</ul><br>
+
+<hr style="border:none;border-top: 2px dashed;">
+
+<h4 id="getsta">Начало работы</h4>
+
+<ol style="text-align: left;">
+    <li>Включить МК. «?» сигнализирует о необходимости инициализации ОЗУ.<br><br>
+        <div style="text-align: center;">
+            <img src="noninit.png" alt="noninit">
+        </div><br>
+    </li>
+    <li>Нажать тонким (не проводящим ток) предметом кнопку «начальная
+        установка». Будет произведено тестирование ЦПУ, ПЗУ, ОЗУ и дисплея.<br><br>
+        <table style="margin-left: auto;margin-right: auto;">
+            <tr><td rowspan="2" style="padding-right: 10px;"><img src="uman/reset.jpg" alt="reset"></td><td><img src="uman/t1.png" alt="t1"></td></tr>
+            <tr><td><img src="uman/t2.png" alt="t2"></td></tr>
+        </table><br>
+    </li>
+    <li>Далее система предложит проверить клавиатуру. Можно нажимать на различные клавиши для проверки их работоспособности.
+        Для окончания теста нужно нажать (последовательно) клавиши <b>УПР + EXE</b>.<br><br>
+        <table style="margin-left: auto;margin-right: auto;">
+            <tr><td style="padding-right: 10px;"><img src="uman/t3.png" alt="t3"></td><td><img src="uman/t4.png" alt="t4"></td></tr>
+        </table><br>
+    </li>
+    <li>Шифратор отобразит приветственный экран. Для начала настройки необходимо ввести (не отображается на экране) кодовое слово <b>«АЗИМУТ»</b>.<br><br>
+        <div style="text-align: center;">
+            <img src="uman/welc.png" alt="welc">
+        </div><br>
+    </li>
+    <li>Система произведет краткий тест и отобразит контрольную сумму ПЗУ.
+        Для всех известных (на момент составления руководства) устройств она равна <b>04367402034</b> (код микросхемы ПЗУ — <b>061</b>).
+        Клавиша <b>Н</b> запустит повторный тест, клавиша <b>Д</b> начнет процедуру настройки.<br><br>
+        <table style="margin-left: auto;margin-right: auto;">
+            <tr><td style="padding-right: 10px;"><img src="uman/te1.png" alt="te1"></td><td><img src="uman/te2.png" alt="te2"></td></tr>
+        </table><br>
+    </li>
+    <li>Система попросит задать пароль длиной 5 символов. Запомните его, чтобы в дальнейшем иметь возможность разблокировать шифратор!
+        Пароль подтверждается комбинацией клавиш <b>УПР + EXE</b>.<br><br>
+        <table style="margin-left: auto;margin-right: auto;">
+            <tr><td style="padding-right: 10px;"><img src="uman/p1.png" alt="p1"></td><td><img src="uman/p2.png" alt="p2"></td></tr>
+        </table><br>
+    </li>
+    <li>Теперь в систему требуется ввести ДКЛ (долговременный ключ), представляющий из себя последовательность 110 цифр (разбитых на 22 блока по 5 цифр).
+        Два последних блока (10 символов) являются контрольной суммой ключа (защита от ошибок при вводе).
+        Такие ключи поставлялись в комплекте с устройством, либо же генерировались (утерянной) программой на IBM PC.
+        На данный момент ключ можно cгенерировать в <b>этом</b> эмуляторе, используя программу
+        <a href="http://mk.bs0dd.net/mk85c/DKLKM85C.zip"><b>DKLKM85C</b></a> или <a href="https://github.com/kaseiiro/mk85"><b>утилиту</b></a> для Python от kaseiiro.
+        Подтверждение ввода — <b>УПР + EXE</b>. В качестве примера приведен вот такой ключ:<br><br>
+        <div style="text-align: center;"><b>84534 45986 35465 64750 69746 75562 96281 96471 16889 77629 94879<br>96394 73073 45415 29900 39356 54944 10712 85757 23266 32131 18232</b></div>
+        <br>
+        <table style="margin-left: auto;margin-right: auto;">
+            <tr><td colspan="2" style="text-align: center;"><img src="uman/key.jpg" alt="key"></td></tr>
+            <tr><td style="padding-right: 10px;"><img src="uman/d1.png" alt="d1"></td><td><img src="uman/d2.png" alt="d2"></td></tr>
+        </table><br>
+    </li>
+    <li>Система предложит выбрать тип данных, которые в дальнейшем будут шифроваться (можно поменять только при вводе нового ключа).
+        Это может быть как Буквенно-цифровая информация, так и исключительно Цифровая (цифры будут отображаться с разделением по блокам).<br><br>
+        <div style="text-align: center;">
+            <img src="uman/bc.png" alt="bc">
+        </div><br>
+    </li>
+    <li>Теперь нужно указать длину групп, на которые будут делиться числа. Это могут быть группы от 2 до 5 цифр в каждой (на экране всегда показываются только 2 группы).
+        Подтверждение ввода — <b>УПР + EXE</b>.<br><br>
+        <table style="margin-left: auto;margin-right: auto;">
+            <tr><td style="padding-right: 10px;"><img src="uman/dl1.png" alt="dl1"></td><td><img src="uman/dl2.png" alt="dl2"></td></tr>
+        </table><br>
+    </li>
+    <li>Конфигурация шифратора закончена! Теперь можно использовать его для шифровки и расшифровки данных.<br><br>
+        <div style="text-align: center;">
+            <img src="uman/mm.png" alt="mm">
+        </div>
+    </li>
+</ol>
+<hr style="border:none;border-top: 2px dashed;">
+
+<h4 id="power">Включение шифратора</h4>
+
+<ol style="text-align: left;">
+    <li>Включить МК. На экране отобразится приветствие. Для разблокировки шифратора необходимо ввести пароль (ввод не отображается).
+        <b>ВНИМАНИЕ!</b> После ввода 25 неправильных символов (счетчик сбрасывается при выключении шифратора) сработает защита от перебора пароля и шифратор уничтожит пользовательские данные в ОЗУ,
+        затем отобразит приветственный экран настройки. В таком случае необходима повторная настройка устройства, начиная с пункта 4.<br><br>
+        <div style="text-align: center;">
+            <img src="uman/wel.png" alt="wel">
+        </div><br>
+    </li>
+    <li>Система произведет краткий тест и отобразит контрольную сумму ПЗУ. Клавиша <b>Н</b> запустит повторный тест, клавиша <b>Д</b> откроет главное меню.<br><br>
+        <table style="margin-left: auto;margin-right: auto;">
+            <tr><td style="padding-right: 10px;"><img src="uman/te1.png" alt="te1"></td><td><img src="uman/te2.png" alt="te2"></td></tr>
+        </table><br>
+    </li>
+    <li>Теперь устройство можно использовать!<br><br>
+        <div style="text-align: center;">
+            <img src="uman/mm.png" alt="mm">
+        </div>
+    </li>
+</ol>
+
+<hr style="border:none;border-top: 2px dashed;">
+
+<h4 id="spke">Обозначение специальных клавиш</h4>
+
+<div style="text-align: left;">
+    &nbsp;&nbsp;&nbsp;&nbsp;<img style="vertical-align:middle" src="uman/z.png" alt="z"> — клавиша включения режима шифровки («Зашифровать»).<br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;<img style="vertical-align:middle" src="uman/r.png" alt="r"> — клавиша включения режима расшифровки («Расшифровать»)<br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;<img style="vertical-align:middle" src="uman/kl.png" alt="kl"> — клавиша включения режима смены ДКЛ («Ключ»).<br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;<img style="vertical-align:middle" src="uman/zb.png" alt="zb"> — клавиша стирания текущего символа (аналог Delete).<br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;<img style="vertical-align:middle" src="uman/blk.png" alt="blk"> — клавиша блокировки ввода (только просмотр с прокруткой).<br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;<img style="vertical-align:middle" src="uman/rl.png" alt="rl"> — клавиша смены раскладки (Русский и Латиница).<br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;<img style="vertical-align:middle" src="uman/mrk.png" alt="mrk"> — клавиша выработки разового ключа (маркант).<br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;<img style="vertical-align:middle" src="uman/s.png" alt="s"> — клавиша прокрутки на 12 символов (или два блока) назад.<br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;<img style="vertical-align:middle" src="uman/f.png" alt="f"> — клавиша прокрутки на 12 символов (или два блока) вперед.<br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;<img style="vertical-align:middle" src="uman/upr.png" alt="upr"> — клавиша-модификатор для дополнительных функций (управляющая).
+</div><br>
+
+<hr style="border:none;border-top: 2px dashed;">
+
+<h4 id="fkupr">Функции клавиш с модификатором УПР</h4>
+
+<div style="text-align: left;">
+&nbsp;&nbsp;&nbsp;&nbsp;<img style="vertical-align:middle" src="uman/upr.png" alt="upr">
++ <img style="vertical-align:middle" src="uman/la.png" alt="la"> — переход в начало строки.<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<img style="vertical-align:middle" src="uman/upr.png" alt="upr">
++ <img style="vertical-align:middle" src="uman/ra.png" alt="ra"> — переход в конец строки.<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<img style="vertical-align:middle" src="uman/upr.png" alt="upr">
++ <img style="vertical-align:middle" src="uman/blk.png" alt="blk"> — разблокировка ввода.<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<img style="vertical-align:middle" src="uman/upr.png" alt="upr">
++ <img style="vertical-align:middle" src="uman/vst.png" alt="vst"> — вероятно, режим вставки, в прошивке не реализован.<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<img style="vertical-align:middle" src="uman/upr.png" alt="upr">
++ <img style="vertical-align:middle" src="uman/0.png" alt="0"> — коррекция расшифровки: возврат к вводу шифротекста для правки.<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<img style="vertical-align:middle" src="uman/upr.png" alt="upr">
++ <img style="vertical-align:middle" src="uman/4.png" alt="4"> — коррекция расшифровки: сдвиг гаммы на 1 разряд назад.<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<img style="vertical-align:middle" src="uman/upr.png" alt="upr">
++ <img style="vertical-align:middle" src="uman/6.png" alt="6"> — коррекция расшифровки: пропуск 1 разряда шифротекста.<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<img style="vertical-align:middle" src="uman/upr.png" alt="upr">
++ <img style="vertical-align:middle" src="uman/exe.png" alt="exe"> — подтверждение ввода данных.
+</div><br>
+
+<hr style="border:none;border-top: 2px dashed;">
+
+<h4 id="colbu">Цветные подписи к клавишам</h4>
+
+<ul style="text-align: left;">
+    <li>Подписи <span style="color: #0084FF;"><b>СИНЕГО</b></span> цвета вводятся при использовании Латинской раскладки.<br><br></li>
+    <li>Подписи <span style="color: red;"><b>КРАСНОГО</b></span> цвета вводятся при использовании клавиши <b>УПР</b>.</li>
+</ul><br>
+
+<hr style="border:none;border-top: 2px dashed;">
+
+<h4 id="segm">Обозначение сегментов на дисплее</h4>
+
+<img src="uman/sg.png" alt="sg"><br>
+
+<ul style="text-align: left;">
+    <li><b>EXT</b> — активна Латинская раскладка.<br><br></li>
+    <li><b>S</b> — нажат модификатор УПР.<br><br></li>
+    <li><b>F</b> — не используется.<br><br></li>
+    <li><b>RUN</b> — режим расшифровки текста.<br><br></li>
+    <li><b>WRT</b> — режим шифровки текста.<br><br></li>
+    <li><b>DEG</b> — режим ввода долговременного ключа.<br><br></li>
+    <li><b>RAD</b> — шифрование в буквенно-цифровом режиме.<br><br></li>
+    <li><b>GRA</b> — шифрование в цифровом режиме.<br><br></li>
+    <li><b>TR</b> — активна блокировка ввода.<br><br></li>
+    <li><b>STOP</b> — достигнут лимит ввода символов.<br><br><br></li>
+    <li><b>Семисегментные индикаторы</b> обычно показывают номер текущего символа или блока.</li>
+</ul><br>
+
+<img src="uman/sga.png" alt="sga"><br>
+<i>(альтернативный вариант сегментов, согласно их назначению)</i><br><br>
+
+<hr style="border:none;border-top: 2px dashed;">
+
+<h4 id="encr">Режим шифрования данных</h4>
+
+<ol style="text-align: left;">
+    <li>Для активации режима в главном меню используем клавишу <img style="vertical-align:middle" src="uman/z.png" alt="z">.<br>
+        Соглашаемся активировать его клавишей <b>Д</b>.<br><br>
+        <table style="margin-left: auto;margin-right: auto;">
+            <tr><td style="padding-right: 10px;"><img src="uman/mm.png" alt="mm"></td><td><img src="uman/rz.png" alt="rz"></td></tr>
+        </table><br>
+    </li>
+    <li>Перед началом процесса шифрования необходимо выработать случайный разовый ключ — маркант. Для этого нужно 10 раз нажать клавишу <b>МРК</b>.<br><br>
+        <div style="text-align: center;">
+            <img src="uman/vm.png" alt="vm">
+        </div><br>
+    </li>
+    <li>Теперь необходимо ввести шифруемый текст (или цифры, если используется цифровой режим шифрования).
+        В качестве примера приведена строка «ШИФРАТОР ANCRIPT». Подтверждаем комбинацией <b>УПР + EXE</b>.<br><br>
+        <table style="margin-left: auto;margin-right: auto;">
+            <tr><td style="padding-right: 10px;"><img src="uman/vt.png" alt="vt"></td><td><img src="uman/vt2.png" alt="vt2"></td></tr>
+        </table><br>
+    </li>
+    <li>Строка шифруется в набор цифр, которые поделены на блоки заданной при настройке длины (вне зависимости от длины блоков на экране всегда отображается только 2 блока).
+        Полученный шифротекст готов к передаче. Нажатие <b>УПР + EXE</b> возвращает в главное меню.<br><br>
+        <div style="text-align: center;"><b>87809 90512 93160 35334 13316 10843 34233 22345 40949</b></div><br>
+        <table style="margin-left: auto;margin-right: auto;">
+            <tr><td style="padding-right: 10px;"><img src="uman/st.png" alt="st"></td><td><img src="uman/st2.png" alt="st2"></td></tr>
+        </table>
+    </li>
+</ol>
+
+<hr style="border:none;border-top: 2px dashed;">
+
+<h4 id="decr">Режим расшифровки данных</h4>
+
+<ol style="text-align: left;">
+    <li>Для активации режима в главном меню используем клавишу <img style="vertical-align:middle" src="uman/r.png" alt="r">.<br>
+        Соглашаемся активировать его клавишей <b>Д</b>.<br><br>
+        <table style="margin-left: auto;margin-right: auto;">
+            <tr><td style="padding-right: 10px;"><img src="uman/mm.png" alt="mm"></td><td><img src="uman/rr.png" alt="rr"></td></tr>
+        </table><br>
+    </li>
+    <li>Теперь вводим блоки шифротекста, полученные при шифровке. Подтверждаем ввод по <b>УПР + EXE</b>.<br><br>
+        <table style="margin-left: auto;margin-right: auto;">
+            <tr><td style="padding-right: 10px;"><img src="uman/rvt.png" alt="rvt"></td><td><img src="uman/rvt2.png" alt="rvt2"></td></tr>
+        </table><br>
+    </li>
+    <li>На экране видна расшифрованная строка. Если при вводе блоков была допущена ошибка и строка расшифровалась некорректно, можно вернуться к вводу шифротекста комбинацией <b>УПР + КР</b>.
+        Также, можно устранять искажения в шифротексте с помощью комбинаций <b>УПР + -1</b> и <b>УПР + +1</b>, см. <a href="#corr">Коррекция искажений при расшифровке</a>.<br><br>
+        <table style="margin-left: auto;margin-right: auto;">
+            <tr><td style="padding-right: 10px;"><img src="uman/ut.png" alt="ut"></td><td><img src="uman/ut2.png" alt="ut2"></td></tr>
+        </table><br>
+    </li>
+    <li>При нажатии на <b>УПР + EXE</b>, перед возвратом в главное меню программа предлагает добавить дополнительные блоки шифротекста.
+        Основное назначение данной функции — расшифровка большого объема данных. Шифратор за раз может расшифровать меньше информации, чем зашифровать.
+        Это вызвано необходимостью хранить шифротекст в ОЗУ, чтобы можно было вернуться к его редактированию по <b>УПР + КР</b>, поэтому свободного места для расшифровки меньше.
+        В случае если шифротекст не умещается в допустимый лимит, нужно расшифровать и сохранить текущие данные, а затем ввести оставшиеся блоки шифротекста, используя функцию добавки.<br><br>
+        <table style="margin-left: auto;margin-right: auto;">
+            <tr><td style="padding-right: 10px;"><img src="uman/ad.png" alt="ad"></td><td><img src="uman/ad2.png" alt="ad2"></td></tr>
+        </table>
+    </li>
+</ol>
+
+<hr style="border:none;border-top: 2px dashed;">
+
+<h4 id="dklc">Режим замены долговременного ключа</h4>
+
+<ol style="text-align: left;">
+    <li>Для активации режима в главном меню используем клавишу <img style="vertical-align:middle" src="uman/kl.png" alt="kl">.<br>
+        Соглашаемся активировать его клавишей <b>Д</b>.<br><br>
+        <table style="margin-left: auto;margin-right: auto;">
+            <tr><td style="padding-right: 10px;"><img src="uman/mm.png" alt="mm"></td><td><img src="uman/rkl.png" alt="rkl"></td></tr>
+        </table><br>
+    </li>
+    <li>Система попросит задать новый пароль. Вводим и подтверждаем клавишами <b>УПР + EXE</b>.<br><br>
+        <table style="margin-left: auto;margin-right: auto;">
+            <tr><td style="padding-right: 10px;"><img src="uman/np.png" alt="np"></td><td><img src="uman/npa.png" alt="npa"></td></tr>
+        </table><br>
+    </li>
+    <li>Теперь нужно ввести новый ДКЛ. Вводим 110 цифр и подтверждаем клавишами <b>УПР + EXE</b>.<br><br>
+        <table style="margin-left: auto;margin-right: auto;">
+            <tr><td style="padding-right: 10px;"><img src="uman/nd.png" alt="nd"></td><td><img src="uman/nd2.png" alt="nd2"></td></tr>
+        </table><br>
+    </li>
+    <li>Задаем режим шифрования (Буквенно-цифровой или Цифровой).<br><br>
+        <div style="text-align: center;">
+            <img src="uman/bc.png" alt="bc">
+        </div><br>
+    </li>
+    <li>При надобности можно сменить длину блоков.<br><br>
+        <div style="text-align: center;">
+            <img src="uman/zmd.png" alt="zmd">
+        </div><br>
+    </li>
+    <li>Переконфигурация шифратора закончена!<br><br>
+        <div style="text-align: center;">
+            <img src="uman/mm.png" alt="mm">
+        </div>
+    </li>
+</ol>
+
+<hr style="border:none;border-top: 2px dashed;">
+
+<h4 id="corr">Коррекция искажений при расшифровке</h4>
+
+<div style="text-align: left;">
+    &nbsp;&nbsp;&nbsp;&nbsp;Примененная здесь система шифрует данные, используя метод гаммирования, когда специально выработанная последовательность (гамма) объединяется с данными.
+    Такой способ удобен тем, что позволяет производить  шифрование и расшифрование одной операцией, объединяя с гаммой исходный текст или шифротекст.
+</div><br>
+
+<table class="gam" style="margin-left: auto;margin-right: auto;border: 1px solid black;border-collapse: collapse;">
+    <tr><td colspan="10">Гамма</td></tr>
+    <tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>...</td></tr>
+    <tr><td colspan="10">Данные</td></tr>
+    <tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>...</td></tr>
+</table><br>
+
+<div style="text-align: left;">
+    &nbsp;&nbsp;&nbsp;&nbsp;Однако, при передаче шифротекста возможно искажение, утрата части данных, либо их дублирование.
+    Если искажение при расшифровке дает, соответственно, искаженные, но читаемые данные,
+    то при потере/дублировании всего одного разряда шифротекста происходит разрыв между данными и гаммой, что приводит к невозможности расшифровать оставшиеся данные.
+    В шифраторе присутствует возможность исправления таких ситуаций. Важно понимать, что первые 10 разрядов (цифр) шифротекста содержат разовый ключ (маркант),
+    искажение которого сразу приводит к невозможности расшифровки всего шифротекста, коррекция здесь ничем не поможет.
+</div><br>
+
+<table style="margin-left: auto;margin-right: auto;">
+    <tr><td style="padding-right: 20px;">
+        <table class="gam" style="margin-left: auto;margin-right: auto;border: 1px solid black;border-collapse: collapse;">
+            <tr><td colspan="10">Гамма</td></tr>
+            <tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>...</td></tr>
+            <tr><td colspan="10">Данные</td></tr>
+            <tr><td>1</td><td>2</td><td>3</td><td>4</td><td style="color: red;">8</td><td style="color: red;">9</td><td style="color: red;">10</td><td style="color: red;">11</td><td style="color: red;">12</td><td style="color: red;">...</td></tr>
+        </table>
+    </td>
+    <td>
+    <table class="gam" style="margin-left: auto;margin-right: auto;border: 1px solid black;border-collapse: collapse;">
+        <tr><td colspan="10">Гамма</td></tr>
+        <tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>...</td></tr>
+        <tr><td colspan="10">Данные</td></tr>
+        <tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td style="color: red;">4</td><td style="color: red;">5</td><td style="color: red;">6</td><td style="color: red;">7</td><td style="color: red;">...</td></tr>
+    </table>
+</td></tr>
+</table><br>
+
+<div style="text-align: left;">
+    &nbsp;&nbsp;&nbsp;&nbsp;Возьмем ранее полученный шифротекст из примера по шифровке: 
+</div><br>
+
+<b>87809 90512 93160 35334 13316 10843 34233 22345 40949</b><br><br>
+
+<div style="text-align: left;">
+    &nbsp;&nbsp;&nbsp;&nbsp;Как известно, здесь зашифрована строка «ШИФРАТОР ANCRIPT».
+    Теперь представим, что при передаче были утеряны три цифры шифротекста: 
+</div><br>
+
+<b>87809 90512 93160 35334 13<span style="color: #CCCCCC;">316</span> 10843 34233 22345 40949</b><br><br>
+
+<div style="text-align: left;">
+    &nbsp;&nbsp;&nbsp;&nbsp;Попробуем ввести имеющийся шифротекст в шифратор:
+</div><br>
+
+<div style="text-align: center;">
+    <img src="uman/k1.png" alt="k1">
+</div><br>
+
+<div style="text-align: left;">
+    &nbsp;&nbsp;&nbsp;&nbsp;В связи с потерей, текст после 6 буквы оказался полностью нечитаем.
+    Для коррекции предназначены комбинации клавиш <b>УПР + -1</b> либо <b>+1</b>. Клавиша <b>-1</b> сдвигает гамму на 1 разряд назад, клавиша <b>+1</b> пропускает один разряд данных.
+    В данном случае, поскольку утеряны 3 цифры, гамму нужно подвинуть на столько же цифр назад.
+</div><br>
+
+<table style="margin-left: auto;margin-right: auto;">
+    <tr><td style="padding-right: 20px;">
+        <table class="gam" style="margin-left: auto;margin-right: auto;border: 1px solid black;border-collapse: collapse;">
+            <tr><td colspan="10">Гамма</td></tr>
+            <tr><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>...</td></tr>
+            <tr><td colspan="10">Данные</td></tr>
+            <tr><td>10</td><td>11</td><td>12</td><td>13</td><td style="color: red;">16</td><td style="color: red;">17</td><td style="color: red;">18</td><td style="color: red;">19</td><td style="color: red;">20</td><td style="color: red;">...</td></tr>
+        </table>
+    </td>
+    <td>
+    <table class="gam" style="margin-left: auto;margin-right: auto;border: 1px solid black;border-collapse: collapse;">
+        <tr><td colspan="10">Гамма</td></tr>
+        <tr><td>10</td><td>11</td><td>12</td><td>13</td><td style="color: #00A933;">16</td><td style="color: #00A933;">17</td><td style="color: #00A933;">18</td><td style="color: #00A933;">19</td><td style="color: #00A933;">20</td><td style="color: #00A933;">...</td></tr>
+        <tr><td colspan="10">Данные</td></tr>
+        <tr><td>10</td><td>11</td><td>12</td><td>13</td><td style="color: #00A933;">16</td><td style="color: #00A933;">17</td><td style="color: #00A933;">18</td><td style="color: #00A933;">19</td><td style="color: #00A933;">20</td><td style="color: #00A933;">...</td></tr>
+    </table>
+</td></tr>
+</table><br>
+
+<div style="text-align: left;">
+    &nbsp;&nbsp;&nbsp;&nbsp;Переместим курсор на позицию, где началось искажение
+    (в цифровом режиме курсор почему-то перемещается только по блокам, впрочем сама по себе коррекция здесь особо не имеет смысла).
+    Нажимаем комбинацию <b>УПР + -1</b> три раза. И действительно, получилась вполне читаемая строка «ШИФРАТ ANCRIPT», в тексте утратились только 2 буквы
+    (каждый символ в буквенно-цифровом режиме кодируется 2 цифрами).
+</div><br>
+
+<table style="margin-left: auto;margin-right: auto;">
+    <tr><td style="padding-right: 10px;"><img src="uman/k2.png" alt="k2"></td><td><img src="uman/k3.png" alt="k3"></td></tr>
+</table><br>
+
+<div style="text-align: left;">
+    &nbsp;&nbsp;&nbsp;&nbsp;Теперь представим, что при передаче произошло дублирование 4 цифр:
+</div><br>
+
+<b>87809 90512 93160 353<u>0 353</u>34 13316 10843 34233 22345 40949</b><br><br>
+
+<div style="text-align: left;">
+    &nbsp;&nbsp;&nbsp;&nbsp;Уже после 4 буквы расшифровка нарушилась.
+</div><br>
+
+<div style="text-align: center;">
+    <img src="uman/k4.png" alt="k4">
+</div><br>
+
+<div style="text-align: left;">
+    &nbsp;&nbsp;&nbsp;&nbsp;Для нормализации требуется пропустить 4 дублированных разряда:
+</div><br>
+
+<table style="margin-left: auto;margin-right: auto;">
+    <tr><td style="padding-right: 20px;">
+        <table class="gam" style="margin-left: auto;margin-right: auto;border: 1px solid black;border-collapse: collapse;">
+            <tr><td colspan="10">Гамма</td></tr>
+            <tr><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>...</td></tr>
+            <tr><td colspan="10">Данные</td></tr>
+            <tr><td>5</td><td>6</td><td>7</td><td>8</td><td style="color: red;">5</td><td style="color: red;">6</td><td style="color: red;">7</td><td style="color: red;">8</td><td style="color: red;">9</td><td style="color: red;">...</td></tr>
+        </table>
+    </td>
+    <td>
+    <table class="gam" style="margin-left: auto;margin-right: auto;border: 1px solid black;border-collapse: collapse;">
+        <tr><td colspan="10">Гамма</td></tr>
+        <tr><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>...</td></tr>
+        <tr><td colspan="10">Данные</td></tr>
+        <tr><td>5</td><td>6</td><td>7</td><td>8</td><td style="color: #00A933;">9</td><td style="color: #00A933;">10</td><td style="color: #00A933;">11</td><td style="color: #00A933;">12</td><td style="color: #00A933;">13</td><td style="color: #00A933;">...</td></tr>
+    </table>
+</td></tr>
+</table><br>
+
+<div style="text-align: left;">
+    &nbsp;&nbsp;&nbsp;&nbsp;Устанавливаем курсор на позицию и 4 раза нажимаем <b>УПР + +1</b>. Данные полностью расшифрованы.
+</div><br>
+
+<table style="margin-left: auto;margin-right: auto;">
+    <tr><td style="padding-right: 10px;"><img src="uman/k5.png" alt="k5"></td><td><img src="uman/k6.png" alt="k6"></td></tr>
+</table>
+
+<hr style="border:none;border-top: 2px dashed;">
+
+<h4 id="infos">Сведения о устройстве</h4>
+
+<ul style="text-align: left;">
+    <li><b>Объем открытого текста:</b> 750 символов или 1500 цифровых знаков<br><br></li>
+    <li><b>Объем информации, расшифровываемой за один раз:</b><br><br>
+        <ul>
+            <li><b>Буквенно-цифровой режим:</b> 535/536<sup>*</sup> символов<br><br></li>
+            <li><b>Цифровой режим:</b> 800/802/803/804<sup>**</sup> цифры<br><br></li>
+        </ul>
+    </li>
+    <li><b>Объем информации, зашифрованной на одном долговременном ключе:</b> до 3,000,000 символов<br><br></li>
+    <li><b>Долговременный ключ:</b> 10<sup>100</sup> вариантов<br><br></li>
+    <li><b>Разовый ключ:</b> 10<sup>10</sup> вариантов<br><br></li>
+    <li><b>Алгоритм шифрования:</b> нелинейный алгоритм высшей сложности «Ангстрем-3»<br><br></li>
+    <li><b>Кодировка:</b> подобна КОИ-7, со сдвигом на 32 позиции.<br><br></li>
+</ul>
+
+<div style="text-align: left;">
+    <sup><b>*</b></sup> Для блоков по 2 цифры можно расшифровать на 1 символ больше.<br>
+    <sup><b>**</b></sup> Для блоков по 5/4/3/2 цифры.
+</div><br><br>
+
+<h4>Таблица соотношений символов МК 85С и Unicode<br>
+<i style="font-size: 15px;font-weight: normal;">нажмите на символ, чтобы скопировать его</i></h4>
+
+
+<table id="soot">
+    <tr><th></th><th>x0</th><th>x1</th><th>x2</th><th>x3</th><th>x4</th><th>x5</th><th>x6</th><th>x7</th><th>x8</th><th>x9</th><th>xA</th><th>xB</th><th>xC</th><th>xD</th><th>xE</th><th>xF</th></tr>
+    <tr><th>0x</th><td onclick="copyc(this, ' ');"><img src="sym/20.png" alt="00"><br>&nbsp;</td>
+        <td class="una" onclick="copyc(this, '!');"><img src="sym/21.png" alt="01"><br>!</td> <td onclick="copyc(this, '&#34;');"><img src="sym/22.png" alt="02"><br>"</td>
+        <td class="una" onclick="copyc(this, '#');"><img src="sym/23.png" alt="03"><br>#</td> <td class="una" onclick="copyc(this, '$');"><img src="sym/24.png" alt="04"><br>$</td>
+        <td class="una" onclick="copyc(this, '%');"><img src="sym/25.png" alt="05"><br>%</td> <td class="una" onclick="copyc(this, '&');"><img src="sym/26.png" alt="06"><br>&</td>
+        <td class="una" onclick="copyc(this, '\'');"><img src="sym/27.png" alt="07"><br>'</td> <td onclick="copyc(this, '(');"><img src="sym/28.png" alt="08"><br>(</td>
+        <td onclick="copyc(this, ')');"><img src="sym/29.png" alt="09"><br>)</td> <td class="una" onclick="copyc(this, '*');"><img src="sym/2a.png" alt="0a"><br>*</td>
+        <td onclick="copyc(this, '+');"><img src="sym/2b.png" alt="0b"><br>+</td> <td onclick="copyc(this, ',');"><img src="sym/2c.png" alt="0c"><br>,</td>
+        <td onclick="copyc(this, '-');"><img src="sym/2d.png" alt="0d"><br>-</td> <td onclick="copyc(this, '.');"><img src="sym/2e.png" alt="0e"><br>.</td>
+        <td onclick="copyc(this, '/');"><img src="sym/2f.png" alt="0f"><br>/</td>
+    </tr>
+    <tr><th>1x</th><td onclick="copyc(this, '0');"><img src="sym/30.png" alt="10"><br>0</td>
+        <td onclick="copyc(this, '1');"><img src="sym/31.png" alt="11"><br>1</td> <td onclick="copyc(this, '2');"><img src="sym/32.png" alt="12"><br>2</td>
+        <td onclick="copyc(this, '3');"><img src="sym/33.png" alt="13"><br>3</td> <td onclick="copyc(this, '4');"><img src="sym/34.png" alt="14"><br>4</td>
+        <td onclick="copyc(this, '5');"><img src="sym/35.png" alt="15"><br>5</td> <td onclick="copyc(this, '6');"><img src="sym/36.png" alt="16"><br>6</td>
+        <td onclick="copyc(this, '7');"><img src="sym/37.png" alt="17"><br>7</td> <td onclick="copyc(this, '8');"><img src="sym/38.png" alt="18"><br>8</td>
+        <td onclick="copyc(this, '9');"><img src="sym/39.png" alt="19"><br>9</td> <td onclick="copyc(this, ':');"><img src="sym/3a.png" alt="1a"><br>:</td>
+        <td class="una" onclick="copyc(this, ';');"><img src="sym/3b.png" alt="1b"><br>;</td> <td class="una" onclick="copyc(this, '<');"><img src="sym/3c.png" alt="1c"><br>&lt;</td>
+        <td class="una" onclick="copyc(this, '=');"><img src="sym/3d.png" alt="1d"><br>=</td> <td class="una" onclick="copyc(this, '>');"><img src="sym/3e.png" alt="1e"><br>&gt;</td>
+        <td onclick="copyc(this, '?');"><img src="sym/3f.png" alt="1f"><br>?</td>
+    </tr>
+    <tr><th>2x</th><td onclick="copyc(this, '@');"><img src="sym/40.png" alt="20"><br>@</td>
+        <td onclick="copyc(this, 'A');"><img src="sym/41.png" alt="21"><br>A</td> <td onclick="copyc(this, 'B');"><img src="sym/42.png" alt="22"><br>B</td>
+        <td onclick="copyc(this, 'C');"><img src="sym/43.png" alt="23"><br>C</td> <td onclick="copyc(this, 'D');"><img src="sym/44.png" alt="24"><br>D</td>
+        <td onclick="copyc(this, 'E');"><img src="sym/45.png" alt="25"><br>E</td> <td onclick="copyc(this, 'F');"><img src="sym/46.png" alt="26"><br>F</td>
+        <td onclick="copyc(this, 'G');"><img src="sym/47.png" alt="27"><br>G</td> <td onclick="copyc(this, 'H');"><img src="sym/48.png" alt="28"><br>H</td>
+        <td onclick="copyc(this, 'I');"><img src="sym/49.png" alt="29"><br>I</td> <td onclick="copyc(this, 'J');"><img src="sym/4a.png" alt="2a"><br>J</td>
+        <td onclick="copyc(this, 'K');"><img src="sym/4b.png" alt="2b"><br>K</td> <td onclick="copyc(this, 'L');"><img src="sym/4c.png" alt="2c"><br>L</td>
+        <td onclick="copyc(this, 'M');"><img src="sym/4d.png" alt="2d"><br>M</td> <td onclick="copyc(this, 'N');"><img src="sym/4e.png" alt="2e"><br>N</td>
+        <td onclick="copyc(this, 'O');"><img src="sym/4f.png" alt="2f"><br>O</td>
+    </tr>
+    <tr><th>3x</th><td onclick="copyc(this, 'P');"><img src="sym/50.png" alt="30"><br>P</td>
+        <td onclick="copyc(this, 'Q');"><img src="sym/51.png" alt="31"><br>Q</td> <td onclick="copyc(this, 'R');"><img src="sym/52.png" alt="32"><br>R</td>
+        <td onclick="copyc(this, 'S');"><img src="sym/53.png" alt="33"><br>S</td> <td onclick="copyc(this, 'T');"><img src="sym/54.png" alt="34"><br>T</td>
+        <td onclick="copyc(this, 'U');"><img src="sym/55.png" alt="35"><br>U</td> <td onclick="copyc(this, 'V');"><img src="sym/56.png" alt="36"><br>V</td>
+        <td onclick="copyc(this, 'W');"><img src="sym/57.png" alt="37"><br>W</td> <td onclick="copyc(this, 'X');"><img src="sym/58.png" alt="38"><br>X</td>
+        <td onclick="copyc(this, 'Y');"><img src="sym/59.png" alt="39"><br>Y</td> <td onclick="copyc(this, 'Z');"><img src="sym/5a.png" alt="3a"><br>Z</td>
+        <td onclick="copyc(this, '[');"><img src="sym/5b.png" alt="3b"><br>[</td> <td onclick="copyc(this, 'Ъ');"><img src="sym/1e.png" alt="3c"><br>Ъ</td>
+        <td onclick="copyc(this, ']');"><img src="sym/5d.png" alt="3d"><br>]</td> <td onclick="copyc(this, '…');"><img src="sym/0a.png" alt="3e"><br>…</td>
+        <td onclick="copyc(this, 'Ё');"><img src="sym/bf.png" alt="3f"><br>Ё</td>
+    </tr>
+    <tr><th>4x</th><td onclick="copyc(this, 'Ю');"><img src="sym/a0.png" alt="40"><br>Ю</td>
+        <td onclick="copyc(this, 'А');"><img src="sym/a1.png" alt="41"><br>А</td> <td onclick="copyc(this, 'Б');"><img src="sym/a2.png" alt="42"><br>Б</td>
+        <td onclick="copyc(this, 'Ц');"><img src="sym/a3.png" alt="43"><br>Ц</td> <td onclick="copyc(this, 'Д');"><img src="sym/a4.png" alt="44"><br>Д</td>
+        <td onclick="copyc(this, 'Е');"><img src="sym/a5.png" alt="45"><br>Е</td> <td onclick="copyc(this, 'Ф');"><img src="sym/a6.png" alt="46"><br>Ф</td>
+        <td onclick="copyc(this, 'Г');"><img src="sym/a7.png" alt="47"><br>Г</td> <td onclick="copyc(this, 'Х');"><img src="sym/a8.png" alt="48"><br>Х</td>
+        <td onclick="copyc(this, 'И');"><img src="sym/a9.png" alt="49"><br>И</td> <td onclick="copyc(this, 'Й');"><img src="sym/aa.png" alt="4a"><br>Й</td>
+        <td onclick="copyc(this, 'К');"><img src="sym/ab.png" alt="4b"><br>К</td> <td onclick="copyc(this, 'Л');"><img src="sym/ac.png" alt="4c"><br>Л</td>
+        <td onclick="copyc(this, 'М');"><img src="sym/ad.png" alt="4d"><br>М</td> <td onclick="copyc(this, 'Н');"><img src="sym/ae.png" alt="4e"><br>Н</td>
+        <td onclick="copyc(this, 'О');"><img src="sym/af.png" alt="4f"><br>О</td>
+    </tr>
+    <tr><th>5x</th><td onclick="copyc(this, 'П');"><img src="sym/b0.png" alt="50"><br>П</td>
+        <td onclick="copyc(this, 'Я');"><img src="sym/b1.png" alt="51"><br>Я</td> <td onclick="copyc(this, 'Р');"><img src="sym/b2.png" alt="52"><br>Р</td>
+        <td onclick="copyc(this, 'С');"><img src="sym/b3.png" alt="53"><br>С</td> <td onclick="copyc(this, 'Т');"><img src="sym/b4.png" alt="54"><br>Т</td>
+        <td onclick="copyc(this, 'У');"><img src="sym/b5.png" alt="55"><br>У</td> <td onclick="copyc(this, 'Ж');"><img src="sym/b6.png" alt="56"><br>Ж</td>
+        <td onclick="copyc(this, 'В');"><img src="sym/b7.png" alt="57"><br>В</td> <td onclick="copyc(this, 'Ь');"><img src="sym/b8.png" alt="58"><br>Ь</td>
+        <td onclick="copyc(this, 'Ы');"><img src="sym/b9.png" alt="59"><br>Ы</td> <td onclick="copyc(this, 'З');"><img src="sym/ba.png" alt="5a"><br>З</td>
+        <td onclick="copyc(this, 'Ш');"><img src="sym/bb.png" alt="5b"><br>Ш</td> <td onclick="copyc(this, 'Э');"><img src="sym/bc.png" alt="5c"><br>Э</td>
+        <td onclick="copyc(this, 'Щ');"><img src="sym/bd.png" alt="5d"><br>Щ</td> <td onclick="copyc(this, 'Ч');"><img src="sym/be.png" alt="5e"><br>Ч</td>
+        <td class="una" onclick="copyc(this, '█');"><img src="sym/7f.png" alt="5f"><br>█</td>
+    </tr>
+</table>
+
+<p style="text-align: left;">
+    &nbsp;&nbsp;&nbsp;&nbsp;Символы, отмеченные <span style="color: darkred;"><b>красным</b></span>, <b>недоступны</b> для ввода с помощью
+    <b>клавиатуры</b> шифратора, поэтому способа их <b>физического</b> ввода <b>не существует</b>.
+</p>
+
+<hr>
+<h3 style="margin-top: 5px;margin-bottom: 5px;">Меню</h3>
+<a class="menulink" href="help_ru.html">Главная страница</a>
+<a class="menulink" href="interface_ru.html">Интерфейс эмулятора</a><br>
+<a class="menulink" href="panel_ru.html">Работа с панелью опций</a>
+<a class="menulink" href="debug_ru.html">Работа с Дебаггером</a>
+<a class="menulink" href="xchg_ru.html">Работа с Xchanger</a><br>
+<span class="menulink">Неофициальное руководство для МК85С</span><br>
+<a class="menulink" href="faq_ru.html">Часто задаваемые вопросы (FAQ)</a>
+<hr>
+
+<script>
+    function copyc(obj, char) {
+        obj.style.backgroundColor="LightGreen";
+        navigator.clipboard.writeText(char);
+        setTimeout(function(obj){obj.style.backgroundColor="";}, 500, obj);
+    }
+</script>
+</body>
+</html> 

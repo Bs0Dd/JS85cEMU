@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JS85cEMU Help</title>
+<meta charset="UTF-8">
+<style>
+    body {text-align: center;}
+
+    .menulink {
+        padding-left: 10px;
+        padding-right: 10px;
+        font-weight: bold;
+    }
+
+    .una {
+        color: darkred;
+    }
+
+    #soot {
+        border: 1px solid black;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #soot th, #soot td {
+        border: 1px solid black;
+        padding-top: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .gam td {
+        border: 1px solid black;
+        width: 25px;
+    }
+</style>
+</head>
+<body>
+
+<h1>JS85cEMU Help</h1>
+
+<h3><a href="uman_ru.html">Русский</a></h3>
+
+<hr>
+<h3 style="margin-top: 5px;margin-bottom: 5px;">Menu</h3>
+<a class="menulink" href="help.html">Main page</a>
+<a class="menulink" href="interface.html">Emulator interface</a><br>
+<a class="menulink" href="panel.html">Working with the options panel</a>
+<a class="menulink" href="debug.html">Working with the Debugger</a>
+<a class="menulink" href="xchg.html">Working with the Xchanger</a><br>
+<span class="menulink">Unofficial manual for MK85C</span><br>
+<a class="menulink" href="faq.html">Frequently asked questions (FAQ)</a>
+<hr>
+
+<h2>Unofficial manual for the "ANСRIPT" encryptor<br>
+(Elektronika MK-85C)<br>
+<i style="font-size: 15px;font-weight: normal;"><b>HTML</b> variant, version <b>1.2</b><br>
+<a href="http://mk.bs0dd.net/mk85c/AZIMUT.pdf" target="_blank"><b>PDF variant (Russian)</b></a></i></h2>
+
+<img src="uman/psa.png" alt="psa"><br><br>
+
+<img style="padding-right: 200px;" src="../bitmaps/realmk.jpg" alt="rea" height="200px"><br><br>
+<img style="padding-left: 200px;" src="../bitmaps/js85c.png" alt="emu" height="200px"><br><br><br>
+
+<b>2024 © Bs0Dd, MaFrance351, rpocc, xff, kaseiiro</b><br><br>
+
+<hr style="border:none;border-top: 2px dashed;">
+
+<h4>Content</h4>
+
+<ol style="text-align: left;">
+    <li><a href="#getsta"><b>Getting started</b></a></li>
+    <li><a href="#power"><b>Powering on encryptor</b></a></li>
+    <li><a href="#spke"><b>Designation of special keys</b></a></li>
+    <li><a href="#fkupr"><b>Functions of keys with modifier УПР (CTRL)</b></a></li>
+    <li><a href="#colbu"><b>Colored key captions</b></a></li>
+    <li><a href="#segm"><b>Display segment designations</b></a></li>
+    <li><a href="#encr"><b>Data encryption mode</b></a></li>
+    <li><a href="#decr"><b>Data decryption mode</b></a></li>
+    <li><a href="#dklc"><b>Long-term key replacement mode</b></a></li>
+    <li><a href="#corr"><b>Correction of distortions during decoding</b></a></li>
+    <li><a href="#infos"><b>Device information</b></a></li>
+</ol><br>
+
+<div style="text-align: left;"><b>Links:</b></div>
+
+<ul style="text-align: left;">
+    <li><a target="_blank" href="https://b3mk.ru/2024/09/20/mk85c_details/">https://b3mk.ru/2024/09/20/mk85c_details/</a></li>
+    <li><a target="_blank" href="https://habr.com/ru/users/MaFrance351/publications/articles/">https://habr.com/ru/users/MaFrance351/publications/articles/</a></li>
+    <li><a target="_blank" href="https://web.archive.org/web/20080612123243/http://www.taswegian.com/MOSCOW/mk-85c.html">https://web.archive.org/web/20080612123243/http://www.taswegian.com/MOSCOW/mk-85c.html</a></li>
+    <li><a target="_blank" href="http://www.leningrad.su/museum/show_calc.php?n=698">http://www.leningrad.su/museum/show_calc.php?n=698</a></li>
+    <li><a target="_blank" href="https://coollib.cc/b/292195/read">https://coollib.cc/b/292195/read</a></li>
+    <li><a target="_blank" href="https://ru.wikipedia.org/wiki/%D0%AD%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%BE%D0%BD%D0%B8%D0%BA%D0%B0_%D0%9C%D0%9A-85">https://ru.wikipedia.org/wiki/Электроника_МК-85</a></li>
+    <li><a target="_blank" href="https://web.archive.org/web/20080103055330/http://www.ancort.ru/fea_ancript.htm">https://web.archive.org/web/20080103055330/http://www.ancort.ru/fea_ancript.htm</a></li>
+    <li><a target="_blank" href="https://www.electronics.ru/files/article_pdf/0/article_617_924.pdf">https://www.electronics.ru/files/article_pdf/0/article_617_924.pdf</a></li>
+    <li><a target="_blank" href="https://mk.bs0dd.net/piotr433/index.htm">https://mk.bs0dd.net/piotr433/index.htm</a></li>
+    <li><a target="_blank" href="https://github.com/kaseiiro/mk85">https://github.com/kaseiiro/mk85</a></li>
+    <li><a target="_blank" href="https://retro-computer.ru/home.aspx#/item/MK-85C">https://retro-computer.ru/home.aspx#/item/MK-85C</a></li>
+</ul><br>
+
+<hr style="border:none;border-top: 2px dashed;">
+
+<h4 id="getsta">Getting started</h4>
+
+<ol style="text-align: left;">
+    <li>Turn on the MK. "?" signals the need to initialize the RAM.<br><br>
+        <div style="text-align: center;">
+            <img src="noninit.png" alt="noninit">
+        </div><br>
+    </li>
+    <li>Press the "начальная установка" (initial setup) button with a thin (non-conductive) object. The CPU, ROM, RAM and display will be tested.<br><br>
+        <table style="margin-left: auto;margin-right: auto;">
+            <tr><td rowspan="2" style="padding-right: 10px;"><img src="uman/reset.jpg" alt="reset"></td><td><img src="uman/t1.png" alt="t1"></td></tr>
+            <tr><td><img src="uman/t2.png" alt="t2"></td></tr>
+        </table><br>
+    </li>
+    <li>Next, the system will offer to check the keyboard. You can press various keys to check their functionality.
+        To finish the test, you need to press (in sequence) the keys <b>УПР + EXE</b>.<br><br>
+        <table style="margin-left: auto;margin-right: auto;">
+            <tr><td style="padding-right: 10px;"><img src="uman/t3.png" alt="t3"></td><td><img src="uman/t4.png" alt="t4"></td></tr>
+        </table><br>
+    </li>
+    <li>The encryptor will display a welcome screen. To start the setup, you must enter (not displayed on the screen) the code word <b>"АЗИМУТ"</b> (azimuth).<br><br>
+        <div style="text-align: center;">
+            <img src="uman/welc.png" alt="welc">
+        </div><br>
+    </li>
+    <li>The system will perform a short test and display the ROM checksum.
+        For all known (at the time of writing) devices, it is <b>04367402034</b> (ROM chip code is <b>061</b>).
+        The <b>Н</b> key will start the test again, the <b>Д</b> key will start the setup procedure.<br><br>
+        <table style="margin-left: auto;margin-right: auto;">
+            <tr><td style="padding-right: 10px;"><img src="uman/te1.png" alt="te1"></td><td><img src="uman/te2.png" alt="te2"></td></tr>
+        </table><br>
+    </li>
+    <li>The system will ask you to set a password of 5 characters.
+        Remember it so that you can unlock the encryptor later! The password is confirmed by the key combination <b>УПР + EXE</b>.<br><br>
+        <table style="margin-left: auto;margin-right: auto;">
+            <tr><td style="padding-right: 10px;"><img src="uman/p1.png" alt="p1"></td><td><img src="uman/p2.png" alt="p2"></td></tr>
+        </table><br>
+    </li>
+    <li>Now you need to enter a DKL (long-term key, LTK) into the system, which is a sequence of 110 digits (divided into 22 blocks of 5 digits).
+        The last two blocks (10 characters) are the checksum of the key (protection against input errors).
+        Such keys were supplied with the device, or were generated by a (lost) program on an IBM PC.
+        At the moment, the key can be generated in <b>this</b> emulator, using the program
+        <a href="http://mk.bs0dd.net/mk85c/DKLKM85C.zip"><b>DKLKM85C</b></a> or <a href="https://github.com/kaseiiro/mk85"><b>utility</b></a> for Python by kaseiiro.
+        Input confirmation — <b>УПР + EXE</b>. As an example, the following key is given:<br><br>
+        <div style="text-align: center;"><b>84534 45986 35465 64750 69746 75562 96281 96471 16889 77629 94879<br>96394 73073 45415 29900 39356 54944 10712 85757 23266 32131 18232</b></div>
+        <br>
+        <table style="margin-left: auto;margin-right: auto;">
+            <tr><td colspan="2" style="text-align: center;"><img src="uman/key.jpg" alt="key"></td></tr>
+            <tr><td style="padding-right: 10px;"><img src="uman/d1.png" alt="d1"></td><td><img src="uman/d2.png" alt="d2"></td></tr>
+        </table><br>
+    </li>
+    <li>The system will prompt you to select the type of data that will be encrypted in the future (this can only be changed when entering a new key).
+        This can be either alphanumeric information or purely digital (the numbers will be displayed separated into blocks).<br><br>
+        <div style="text-align: center;">
+            <img src="uman/bc.png" alt="bc">
+        </div><br>
+    </li>
+    <li>Now you need to specify the length of the groups into which the numbers will be divided. These can be groups of 2 to 5 digits each (only 2 groups are always shown on the screen).
+        Input confirmation — <b>УПР + EXE</b>.<br><br>
+        <table style="margin-left: auto;margin-right: auto;">
+            <tr><td style="padding-right: 10px;"><img src="uman/dl1.png" alt="dl1"></td><td><img src="uman/dl2.png" alt="dl2"></td></tr>
+        </table><br>
+    </li>
+    <li>The encryptor configuration is complete! Now you can use it to encrypt and decrypt data.<br><br>
+        <div style="text-align: center;">
+            <img src="uman/mm.png" alt="mm">
+        </div>
+    </li>
+</ol>
+<hr style="border:none;border-top: 2px dashed;">
+
+<h4 id="power">Powering on encryptor</h4>
+
+<ol style="text-align: left;">
+    <li>Turn on the MK. A greeting will be displayed on the screen. To unlock the encryptor, you must enter the password (the input is not displayed).
+        <b>ATTENTION!</b> After entering 25 incorrect characters (the counter is reset when the encryptor is turned off),
+        the password brute-force protection will be activated and the encryptor will destroy user data in RAM, then display the welcome setup screen.
+        In this case, you need to re-set up the device, starting from point 4.<br><br>
+        <div style="text-align: center;">
+            <img src="uman/wel.png" alt="wel">
+        </div><br>
+    </li>
+    <li>The system will perform a short test and display the ROM checksum.
+        The <b>Н</b> key will start the test again, the <b>Д</b> key will open the main menu.<br><br>
+        <table style="margin-left: auto;margin-right: auto;">
+            <tr><td style="padding-right: 10px;"><img src="uman/te1.png" alt="te1"></td><td><img src="uman/te2.png" alt="te2"></td></tr>
+        </table><br>
+    </li>
+    <li>The device is now ready to use!<br><br>
+        <div style="text-align: center;">
+            <img src="uman/mm.png" alt="mm">
+        </div>
+    </li>
+</ol>
+
+<hr style="border:none;border-top: 2px dashed;">
+
+<h4 id="spke">Designation of special keys</h4>
+
+<div style="text-align: left;">
+    &nbsp;&nbsp;&nbsp;&nbsp;<img style="vertical-align:middle" src="uman/z.png" alt="z"> — encryption mode enable key ("Encrypt").<br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;<img style="vertical-align:middle" src="uman/r.png" alt="r"> — decryption mode enable key ("Decrypt").<br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;<img style="vertical-align:middle" src="uman/kl.png" alt="kl"> — key for switching on the DKL / LTK change mode ("Key").<br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;<img style="vertical-align:middle" src="uman/zb.png" alt="zb"> — key for deleting the current character (analogous to Delete).<br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;<img style="vertical-align:middle" src="uman/blk.png" alt="blk"> — input lock key (view and scroll only).<br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;<img style="vertical-align:middle" src="uman/rl.png" alt="rl"> — keyboard layout change key (Russian and Latin).<br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;<img style="vertical-align:middle" src="uman/mrk.png" alt="mrk"> — one-time key generation key (markant).<br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;<img style="vertical-align:middle" src="uman/s.png" alt="s"> — scroll key 12 characters (or two blocks) back.<br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;<img style="vertical-align:middle" src="uman/f.png" alt="f"> — scroll key 12 characters (or two blocks) forward.<br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;<img style="vertical-align:middle" src="uman/upr.png" alt="upr"> — modifier key for additional functions (control).
+</div><br>
+
+<hr style="border:none;border-top: 2px dashed;">
+
+<h4 id="fkupr">Functions of keys with modifier УПР (CTRL)</h4>
+
+<div style="text-align: left;">
+&nbsp;&nbsp;&nbsp;&nbsp;<img style="vertical-align:middle" src="uman/upr.png" alt="upr">
++ <img style="vertical-align:middle" src="uman/la.png" alt="la"> — go to the beginning of the line.<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<img style="vertical-align:middle" src="uman/upr.png" alt="upr">
++ <img style="vertical-align:middle" src="uman/ra.png" alt="ra"> — go to end of line.<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<img style="vertical-align:middle" src="uman/upr.png" alt="upr">
++ <img style="vertical-align:middle" src="uman/blk.png" alt="blk"> — unlock input.<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<img style="vertical-align:middle" src="uman/upr.png" alt="upr">
++ <img style="vertical-align:middle" src="uman/vst.png" alt="vst"> — probably insert mode, not implemented in firmware.<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<img style="vertical-align:middle" src="uman/upr.png" alt="upr">
++ <img style="vertical-align:middle" src="uman/0.png" alt="0"> — decrypting correction: return to ciphertext input for editing.<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<img style="vertical-align:middle" src="uman/upr.png" alt="upr">
++ <img style="vertical-align:middle" src="uman/4.png" alt="4"> — decrypting correction: shift gamma back 1 digit.<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<img style="vertical-align:middle" src="uman/upr.png" alt="upr">
++ <img style="vertical-align:middle" src="uman/6.png" alt="6"> — decrypting correction: skip 1 digit of ciphertext.<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<img style="vertical-align:middle" src="uman/upr.png" alt="upr">
++ <img style="vertical-align:middle" src="uman/exe.png" alt="exe"> — confirmation of data entry.
+</div><br>
+
+<hr style="border:none;border-top: 2px dashed;">
+
+<h4 id="colbu">Colored key captions</h4>
+
+<ul style="text-align: left;">
+    <li><span style="color: #0084FF;"><b>BLUE</b></span> color captions are entered when using the Latin layout.<br><br></li>
+    <li><span style="color: red;"><b>RED</b></span> color captions are entered using the <b>УПР</b> key.</li>
+</ul><br>
+
+<hr style="border:none;border-top: 2px dashed;">
+
+<h4 id="segm">Display segment designations</h4>
+
+<img src="uman/sg.png" alt="sg"><br>
+
+<ul style="text-align: left;">
+    <li><b>EXT</b> — Latin layout is active.<br><br></li>
+    <li><b>S</b> — УПР modifier pressed.<br><br></li>
+    <li><b>F</b> — not used.<br><br></li>
+    <li><b>RUN</b> — text decryption mode.<br><br></li>
+    <li><b>WRT</b> — text encryption mode.<br><br></li>
+    <li><b>DEG</b> — long-term key input mode.<br><br></li>
+    <li><b>RAD</b> — encryption in alphanumeric mode.<br><br></li>
+    <li><b>GRA</b> — encryption in digital mode.<br><br></li>
+    <li><b>TR</b> — input lock is active.<br><br></li>
+    <li><b>STOP</b> — character input limit reached.<br><br><br></li>
+    <li><b>Seven-segment indicators</b> typically show the number of the current symbol or block.</li>
+</ul><br>
+
+<img src="uman/sga.png" alt="sga"><br>
+<i>(alternative version of segments, according to their purpose)</i><br><br>
+
+<hr style="border:none;border-top: 2px dashed;">
+
+<h4 id="encr">Data encryption mode</h4>
+
+<ol style="text-align: left;">
+    <li>To activate the mode in the main menu, use the key <img style="vertical-align:middle" src="uman/z.png" alt="z">.<br>
+        Agree to activate it with the <b>Д</b> key.<br><br>
+        <table style="margin-left: auto;margin-right: auto;">
+            <tr><td style="padding-right: 10px;"><img src="uman/mm.png" alt="mm"></td><td><img src="uman/rz.png" alt="rz"></td></tr>
+        </table><br>
+    </li>
+    <li>Before the encryption process begins, it is necessary to generate a random one-time key - a markant. To do this, press the <b>МРК</b> key 10 times.<br><br>
+        <div style="text-align: center;">
+            <img src="uman/vm.png" alt="vm">
+        </div><br>
+    </li>
+    <li>Now you need to enter the text that will be encrypted (or numbers, if you are using digital encryption mode).
+        The string "ШИФРАТОР ANCRIPT" (ANCRIPT ENCRYPTOR) is given as an example. Confirm with the combination <b>УПР + EXE</b>.<br><br>
+        <table style="margin-left: auto;margin-right: auto;">
+            <tr><td style="padding-right: 10px;"><img src="uman/vt.png" alt="vt"></td><td><img src="uman/vt2.png" alt="vt2"></td></tr>
+        </table><br>
+    </li>
+    <li>The string is encrypted into a set of numbers, which are divided into blocks of the length specified during setup (regardless of the length of the blocks, only 2 blocks are always displayed on the screen).
+        The ciphertext is ready for transmission. Pressing <b>УПР + EXE</b> returns to the main menu.<br><br>
+        <div style="text-align: center;"><b>87809 90512 93160 35334 13316 10843 34233 22345 40949</b></div><br>
+        <table style="margin-left: auto;margin-right: auto;">
+            <tr><td style="padding-right: 10px;"><img src="uman/st.png" alt="st"></td><td><img src="uman/st2.png" alt="st2"></td></tr>
+        </table>
+    </li>
+</ol>
+
+<hr style="border:none;border-top: 2px dashed;">
+
+<h4 id="decr">Data decryption mode</h4>
+
+<ol style="text-align: left;">
+    <li>To activate the mode in the main menu, use the key <img style="vertical-align:middle" src="uman/r.png" alt="r">.<br>
+        Agree to activate it with the <b>Д</b> key.<br><br>
+        <table style="margin-left: auto;margin-right: auto;">
+            <tr><td style="padding-right: 10px;"><img src="uman/mm.png" alt="mm"></td><td><img src="uman/rr.png" alt="rr"></td></tr>
+        </table><br>
+    </li>
+    <li>Now enter the ciphertext blocks obtained during encryption. Confirm the entry by <b>УПР + EXE</b>.<br><br>
+        <table style="margin-left: auto;margin-right: auto;">
+            <tr><td style="padding-right: 10px;"><img src="uman/rvt.png" alt="rvt"></td><td><img src="uman/rvt2.png" alt="rvt2"></td></tr>
+        </table><br>
+    </li>
+    <li>The decrypted string is visible on the screen. If an error was made when entering the blocks and the string was decrypted incorrectly, you can return to entering the ciphertext using the combination <b>УПР + КР</b>.
+        Also, it is possible to eliminate distortions in the ciphertext using the combinations <b>УПР + -1</b> and <b>УПР + +1</b>, see <a href="#corr">Correction of distortions during decoding</a>.<br><br>
+        <table style="margin-left: auto;margin-right: auto;">
+            <tr><td style="padding-right: 10px;"><img src="uman/ut.png" alt="ut"></td><td><img src="uman/ut2.png" alt="ut2"></td></tr>
+        </table><br>
+    </li>
+    <li>When you click <b>УПР + EXE</b>, before returning to the main menu, the program offers to add additional ciphertext blocks.
+        The main purpose of this function is to decrypt a large amount of data. The encryptor can decrypt less information at a time than it can encrypt.
+        This is due to the need to store the ciphertext in RAM so that you can return to editing it using <b>УПР + КР</b>, so there is less free space for decryption.
+        If the ciphertext does not fit into the permissible limit, you need to decrypt and save the current data, and then enter the remaining ciphertext blocks using the add function.<br><br>
+        <table style="margin-left: auto;margin-right: auto;">
+            <tr><td style="padding-right: 10px;"><img src="uman/ad.png" alt="ad"></td><td><img src="uman/ad2.png" alt="ad2"></td></tr>
+        </table>
+    </li>
+</ol>
+
+<hr style="border:none;border-top: 2px dashed;">
+
+<h4 id="dklc">Long-term key replacement mode</h4>
+
+<ol style="text-align: left;">
+    <li>To activate the mode in the main menu, use the key <img style="vertical-align:middle" src="uman/kl.png" alt="kl">.<br>
+        Agree to activate it with the <b>Д</b> key.<br><br>
+        <table style="margin-left: auto;margin-right: auto;">
+            <tr><td style="padding-right: 10px;"><img src="uman/mm.png" alt="mm"></td><td><img src="uman/rkl.png" alt="rkl"></td></tr>
+        </table><br>
+    </li>
+    <li>The system will ask you to set a new password. Enter and confirm with the keys <b>УПР + EXE</b>.<br><br>
+        <table style="margin-left: auto;margin-right: auto;">
+            <tr><td style="padding-right: 10px;"><img src="uman/np.png" alt="np"></td><td><img src="uman/npa.png" alt="npa"></td></tr>
+        </table><br>
+    </li>
+    <li>Now you need to enter a new DKL. Enter 110 digits and confirm with the keys <b>УПР + EXE</b>.<br><br>
+        <table style="margin-left: auto;margin-right: auto;">
+            <tr><td style="padding-right: 10px;"><img src="uman/nd.png" alt="nd"></td><td><img src="uman/nd2.png" alt="nd2"></td></tr>
+        </table><br>
+    </li>
+    <li>Set the encryption mode (Alphanumeric or Digital).<br><br>
+        <div style="text-align: center;">
+            <img src="uman/bc.png" alt="bc">
+        </div><br>
+    </li>
+    <li>If necessary, you can change the length of the blocks.<br><br>
+        <div style="text-align: center;">
+            <img src="uman/zmd.png" alt="zmd">
+        </div><br>
+    </li>
+    <li>Encryptor reconfiguration completed!<br><br>
+        <div style="text-align: center;">
+            <img src="uman/mm.png" alt="mm">
+        </div>
+    </li>
+</ol>
+
+<hr style="border:none;border-top: 2px dashed;">
+
+<h4 id="corr">Correction of distortions during decoding</h4>
+
+<div style="text-align: left;">
+    &nbsp;&nbsp;&nbsp;&nbsp;The system used here encrypts data using the gamma method, where a specially developed sequence (gamma) is combined with the data.
+    This method is convenient because it allows encryption and decryption in one operation, combining the original text or ciphertext with the gamma.
+</div><br>
+
+<table class="gam" style="margin-left: auto;margin-right: auto;border: 1px solid black;border-collapse: collapse;">
+    <tr><td colspan="10">Gamma</td></tr>
+    <tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>...</td></tr>
+    <tr><td colspan="10">Data</td></tr>
+    <tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>...</td></tr>
+</table><br>
+
+<div style="text-align: left;">
+    &nbsp;&nbsp;&nbsp;&nbsp;However, when transmitting ciphertext, distortion, loss of part of the data, or its duplication are possible.
+    If distortion during decryption produces, accordingly, distorted but readable data, then with the loss/duplication of just one digit of the ciphertext,
+    a gap occurs between the data and the gamma, which makes it impossible to decrypt the remaining data.
+    The encryptor has the ability to correct such situations. It is important to understand that the first 10 digits of the ciphertext contain a one-time key (markant),
+    the distortion of which immediately leads to the impossibility of decrypting the entire ciphertext, correction will not help here.
+</div><br>
+
+<table style="margin-left: auto;margin-right: auto;">
+    <tr><td style="padding-right: 20px;">
+        <table class="gam" style="margin-left: auto;margin-right: auto;border: 1px solid black;border-collapse: collapse;">
+            <tr><td colspan="10">Gamma</td></tr>
+            <tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>...</td></tr>
+            <tr><td colspan="10">Data</td></tr>
+            <tr><td>1</td><td>2</td><td>3</td><td>4</td><td style="color: red;">8</td><td style="color: red;">9</td><td style="color: red;">10</td><td style="color: red;">11</td><td style="color: red;">12</td><td style="color: red;">...</td></tr>
+        </table>
+    </td>
+    <td>
+    <table class="gam" style="margin-left: auto;margin-right: auto;border: 1px solid black;border-collapse: collapse;">
+        <tr><td colspan="10">Gamma</td></tr>
+        <tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>...</td></tr>
+        <tr><td colspan="10">Data</td></tr>
+        <tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td style="color: red;">4</td><td style="color: red;">5</td><td style="color: red;">6</td><td style="color: red;">7</td><td style="color: red;">...</td></tr>
+    </table>
+</td></tr>
+</table><br>
+
+<div style="text-align: left;">
+    &nbsp;&nbsp;&nbsp;&nbsp;Let's take the previously obtained ciphertext from the encryption example:
+</div><br>
+
+<b>87809 90512 93160 35334 13316 10843 34233 22345 40949</b><br><br>
+
+<div style="text-align: left;">
+    &nbsp;&nbsp;&nbsp;&nbsp;As you know, the string "ШИФРАТОР ANCRIPT" (ANCRIPT ENCRYPTOR) is encrypted here.
+    Now imagine that three ciphertext digits were lost during transmission: 
+</div><br>
+
+<b>87809 90512 93160 35334 13<span style="color: #CCCCCC;">316</span> 10843 34233 22345 40949</b><br><br>
+
+<div style="text-align: left;">
+    &nbsp;&nbsp;&nbsp;&nbsp;Let's try to enter the existing ciphertext into the encryptor:
+</div><br>
+
+<div style="text-align: center;">
+    <img src="uman/k1.png" alt="k1">
+</div><br>
+
+<div style="text-align: left;">
+    &nbsp;&nbsp;&nbsp;&nbsp;Due to the loss, the text after the 6th letter became completely unreadable.
+    The key combinations <b>УПР + -1</b> or <b>+1</b> are intended for correction. The <b>-1</b> key shifts the gamma back by 1 digit, the <b>+1</b> key skips one digit of data.
+    In this case, since 3 digits are lost, the gamma needs to be shifted back by the same number of digits.
+</div><br>
+
+<table style="margin-left: auto;margin-right: auto;">
+    <tr><td style="padding-right: 20px;">
+        <table class="gam" style="margin-left: auto;margin-right: auto;border: 1px solid black;border-collapse: collapse;">
+            <tr><td colspan="10">Gamma</td></tr>
+            <tr><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>...</td></tr>
+            <tr><td colspan="10">Data</td></tr>
+            <tr><td>10</td><td>11</td><td>12</td><td>13</td><td style="color: red;">16</td><td style="color: red;">17</td><td style="color: red;">18</td><td style="color: red;">19</td><td style="color: red;">20</td><td style="color: red;">...</td></tr>
+        </table>
+    </td>
+    <td>
+    <table class="gam" style="margin-left: auto;margin-right: auto;border: 1px solid black;border-collapse: collapse;">
+        <tr><td colspan="10">Gamma</td></tr>
+        <tr><td>10</td><td>11</td><td>12</td><td>13</td><td style="color: #00A933;">16</td><td style="color: #00A933;">17</td><td style="color: #00A933;">18</td><td style="color: #00A933;">19</td><td style="color: #00A933;">20</td><td style="color: #00A933;">...</td></tr>
+        <tr><td colspan="10">Data</td></tr>
+        <tr><td>10</td><td>11</td><td>12</td><td>13</td><td style="color: #00A933;">16</td><td style="color: #00A933;">17</td><td style="color: #00A933;">18</td><td style="color: #00A933;">19</td><td style="color: #00A933;">20</td><td style="color: #00A933;">...</td></tr>
+    </table>
+</td></tr>
+</table><br>
+
+<div style="text-align: left;">
+    &nbsp;&nbsp;&nbsp;&nbsp;Let's move the cursor to the position where the distortion began
+    (in digital mode, for some reason, the cursor only moves by blocks, however, the correction itself does not make much sense here).
+    Press the combination <b>УПР + -1</b> three times. And indeed, we got a quite readable string "ШИФРАТ ANCRIPT",
+    only 2 letters were lost in the text (each symbol in alphanumeric mode is encoded by 2 digits).
+</div><br>
+
+<table style="margin-left: auto;margin-right: auto;">
+    <tr><td style="padding-right: 10px;"><img src="uman/k2.png" alt="k2"></td><td><img src="uman/k3.png" alt="k3"></td></tr>
+</table><br>
+
+<div style="text-align: left;">
+    &nbsp;&nbsp;&nbsp;&nbsp;Now let's imagine that during transmission there was a duplication of 4 digits:
+</div><br>
+
+<b>87809 90512 93160 353<u>0 353</u>34 13316 10843 34233 22345 40949</b><br><br>
+
+<div style="text-align: left;">
+    &nbsp;&nbsp;&nbsp;&nbsp;After just 4 letters the decoding was broken.
+</div><br>
+
+<div style="text-align: center;">
+    <img src="uman/k4.png" alt="k4">
+</div><br>
+
+<div style="text-align: left;">
+    &nbsp;&nbsp;&nbsp;&nbsp;For normalization it is necessary to skip 4 duplicated digits:
+</div><br>
+
+<table style="margin-left: auto;margin-right: auto;">
+    <tr><td style="padding-right: 20px;">
+        <table class="gam" style="margin-left: auto;margin-right: auto;border: 1px solid black;border-collapse: collapse;">
+            <tr><td colspan="10">Gamma</td></tr>
+            <tr><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>...</td></tr>
+            <tr><td colspan="10">Data</td></tr>
+            <tr><td>5</td><td>6</td><td>7</td><td>8</td><td style="color: red;">5</td><td style="color: red;">6</td><td style="color: red;">7</td><td style="color: red;">8</td><td style="color: red;">9</td><td style="color: red;">...</td></tr>
+        </table>
+    </td>
+    <td>
+    <table class="gam" style="margin-left: auto;margin-right: auto;border: 1px solid black;border-collapse: collapse;">
+        <tr><td colspan="10">Gamma</td></tr>
+        <tr><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>...</td></tr>
+        <tr><td colspan="10">Data</td></tr>
+        <tr><td>5</td><td>6</td><td>7</td><td>8</td><td style="color: #00A933;">9</td><td style="color: #00A933;">10</td><td style="color: #00A933;">11</td><td style="color: #00A933;">12</td><td style="color: #00A933;">13</td><td style="color: #00A933;">...</td></tr>
+    </table>
+</td></tr>
+</table><br>
+
+<div style="text-align: left;">
+    &nbsp;&nbsp;&nbsp;&nbsp;Place the cursor on the position and press <b>УПР + +1</b> 4 times. The data is completely decrypted now.
+</div><br>
+
+<table style="margin-left: auto;margin-right: auto;">
+    <tr><td style="padding-right: 10px;"><img src="uman/k5.png" alt="k5"></td><td><img src="uman/k6.png" alt="k6"></td></tr>
+</table>
+
+<hr style="border:none;border-top: 2px dashed;">
+
+<h4 id="infos">Device information</h4>
+
+<ul style="text-align: left;">
+    <li><b>Plaintext size:</b> 750 characters or 1500 numeric characters<br><br></li>
+    <li><b>Volume of information decrypted at one time:</b><br><br>
+        <ul>
+            <li><b>Alphanumeric mode:</b> 535/536<sup>*</sup> characters<br><br></li>
+            <li><b>Digital mode:</b> 800/802/803/804<sup>**</sup> digits<br><br></li>
+        </ul>
+    </li>
+    <li><b>The volume of information encrypted on one long-term key:</b> up to 3,000,000 characters<br><br></li>
+    <li><b>Long-term key:</b> 10<sup>100</sup> variants<br><br></li>
+    <li><b>One-time key:</b> 10<sup>10</sup> variants<br><br></li>
+    <li><b>Encryption algorithm:</b> nonlinear algorithm of the highest complexity "Angstrem-3"<br><br></li>
+    <li><b>Encoding:</b> similar to KOI-7, with a shift of 32 positions.<br><br></li>
+</ul>
+
+<div style="text-align: left;">
+    <sup><b>*</b></sup> For blocks of 2 digits, you can decrypt 1 more symbol.<br>
+    <sup><b>**</b></sup> For blocks of 5/4/3/2 digits.
+</div><br><br>
+
+<h4>Table of relation between MK 85C and Unicode characters <br>
+    <i style="font-size: 15px;font-weight: normal;">click on a character to copy it</i></h4>
+
+
+<table id="soot">
+    <tr><th></th><th>x0</th><th>x1</th><th>x2</th><th>x3</th><th>x4</th><th>x5</th><th>x6</th><th>x7</th><th>x8</th><th>x9</th><th>xA</th><th>xB</th><th>xC</th><th>xD</th><th>xE</th><th>xF</th></tr>
+    <tr><th>0x</th><td onclick="copyc(this, ' ');"><img src="sym/20.png" alt="00"><br>&nbsp;</td>
+        <td class="una" onclick="copyc(this, '!');"><img src="sym/21.png" alt="01"><br>!</td> <td onclick="copyc(this, '&#34;');"><img src="sym/22.png" alt="02"><br>"</td>
+        <td class="una" onclick="copyc(this, '#');"><img src="sym/23.png" alt="03"><br>#</td> <td class="una" onclick="copyc(this, '$');"><img src="sym/24.png" alt="04"><br>$</td>
+        <td class="una" onclick="copyc(this, '%');"><img src="sym/25.png" alt="05"><br>%</td> <td class="una" onclick="copyc(this, '&');"><img src="sym/26.png" alt="06"><br>&</td>
+        <td class="una" onclick="copyc(this, '\'');"><img src="sym/27.png" alt="07"><br>'</td> <td onclick="copyc(this, '(');"><img src="sym/28.png" alt="08"><br>(</td>
+        <td onclick="copyc(this, ')');"><img src="sym/29.png" alt="09"><br>)</td> <td class="una" onclick="copyc(this, '*');"><img src="sym/2a.png" alt="0a"><br>*</td>
+        <td onclick="copyc(this, '+');"><img src="sym/2b.png" alt="0b"><br>+</td> <td onclick="copyc(this, ',');"><img src="sym/2c.png" alt="0c"><br>,</td>
+        <td onclick="copyc(this, '-');"><img src="sym/2d.png" alt="0d"><br>-</td> <td onclick="copyc(this, '.');"><img src="sym/2e.png" alt="0e"><br>.</td>
+        <td onclick="copyc(this, '/');"><img src="sym/2f.png" alt="0f"><br>/</td>
+    </tr>
+    <tr><th>1x</th><td onclick="copyc(this, '0');"><img src="sym/30.png" alt="10"><br>0</td>
+        <td onclick="copyc(this, '1');"><img src="sym/31.png" alt="11"><br>1</td> <td onclick="copyc(this, '2');"><img src="sym/32.png" alt="12"><br>2</td>
+        <td onclick="copyc(this, '3');"><img src="sym/33.png" alt="13"><br>3</td> <td onclick="copyc(this, '4');"><img src="sym/34.png" alt="14"><br>4</td>
+        <td onclick="copyc(this, '5');"><img src="sym/35.png" alt="15"><br>5</td> <td onclick="copyc(this, '6');"><img src="sym/36.png" alt="16"><br>6</td>
+        <td onclick="copyc(this, '7');"><img src="sym/37.png" alt="17"><br>7</td> <td onclick="copyc(this, '8');"><img src="sym/38.png" alt="18"><br>8</td>
+        <td onclick="copyc(this, '9');"><img src="sym/39.png" alt="19"><br>9</td> <td onclick="copyc(this, ':');"><img src="sym/3a.png" alt="1a"><br>:</td>
+        <td class="una" onclick="copyc(this, ';');"><img src="sym/3b.png" alt="1b"><br>;</td> <td class="una" onclick="copyc(this, '<');"><img src="sym/3c.png" alt="1c"><br>&lt;</td>
+        <td class="una" onclick="copyc(this, '=');"><img src="sym/3d.png" alt="1d"><br>=</td> <td class="una" onclick="copyc(this, '>');"><img src="sym/3e.png" alt="1e"><br>&gt;</td>
+        <td onclick="copyc(this, '?');"><img src="sym/3f.png" alt="1f"><br>?</td>
+    </tr>
+    <tr><th>2x</th><td onclick="copyc(this, '@');"><img src="sym/40.png" alt="20"><br>@</td>
+        <td onclick="copyc(this, 'A');"><img src="sym/41.png" alt="21"><br>A</td> <td onclick="copyc(this, 'B');"><img src="sym/42.png" alt="22"><br>B</td>
+        <td onclick="copyc(this, 'C');"><img src="sym/43.png" alt="23"><br>C</td> <td onclick="copyc(this, 'D');"><img src="sym/44.png" alt="24"><br>D</td>
+        <td onclick="copyc(this, 'E');"><img src="sym/45.png" alt="25"><br>E</td> <td onclick="copyc(this, 'F');"><img src="sym/46.png" alt="26"><br>F</td>
+        <td onclick="copyc(this, 'G');"><img src="sym/47.png" alt="27"><br>G</td> <td onclick="copyc(this, 'H');"><img src="sym/48.png" alt="28"><br>H</td>
+        <td onclick="copyc(this, 'I');"><img src="sym/49.png" alt="29"><br>I</td> <td onclick="copyc(this, 'J');"><img src="sym/4a.png" alt="2a"><br>J</td>
+        <td onclick="copyc(this, 'K');"><img src="sym/4b.png" alt="2b"><br>K</td> <td onclick="copyc(this, 'L');"><img src="sym/4c.png" alt="2c"><br>L</td>
+        <td onclick="copyc(this, 'M');"><img src="sym/4d.png" alt="2d"><br>M</td> <td onclick="copyc(this, 'N');"><img src="sym/4e.png" alt="2e"><br>N</td>
+        <td onclick="copyc(this, 'O');"><img src="sym/4f.png" alt="2f"><br>O</td>
+    </tr>
+    <tr><th>3x</th><td onclick="copyc(this, 'P');"><img src="sym/50.png" alt="30"><br>P</td>
+        <td onclick="copyc(this, 'Q');"><img src="sym/51.png" alt="31"><br>Q</td> <td onclick="copyc(this, 'R');"><img src="sym/52.png" alt="32"><br>R</td>
+        <td onclick="copyc(this, 'S');"><img src="sym/53.png" alt="33"><br>S</td> <td onclick="copyc(this, 'T');"><img src="sym/54.png" alt="34"><br>T</td>
+        <td onclick="copyc(this, 'U');"><img src="sym/55.png" alt="35"><br>U</td> <td onclick="copyc(this, 'V');"><img src="sym/56.png" alt="36"><br>V</td>
+        <td onclick="copyc(this, 'W');"><img src="sym/57.png" alt="37"><br>W</td> <td onclick="copyc(this, 'X');"><img src="sym/58.png" alt="38"><br>X</td>
+        <td onclick="copyc(this, 'Y');"><img src="sym/59.png" alt="39"><br>Y</td> <td onclick="copyc(this, 'Z');"><img src="sym/5a.png" alt="3a"><br>Z</td>
+        <td onclick="copyc(this, '[');"><img src="sym/5b.png" alt="3b"><br>[</td> <td onclick="copyc(this, 'Ъ');"><img src="sym/1e.png" alt="3c"><br>Ъ</td>
+        <td onclick="copyc(this, ']');"><img src="sym/5d.png" alt="3d"><br>]</td> <td onclick="copyc(this, '…');"><img src="sym/0a.png" alt="3e"><br>…</td>
+        <td onclick="copyc(this, 'Ё');"><img src="sym/bf.png" alt="3f"><br>Ё</td>
+    </tr>
+    <tr><th>4x</th><td onclick="copyc(this, 'Ю');"><img src="sym/a0.png" alt="40"><br>Ю</td>
+        <td onclick="copyc(this, 'А');"><img src="sym/a1.png" alt="41"><br>А</td> <td onclick="copyc(this, 'Б');"><img src="sym/a2.png" alt="42"><br>Б</td>
+        <td onclick="copyc(this, 'Ц');"><img src="sym/a3.png" alt="43"><br>Ц</td> <td onclick="copyc(this, 'Д');"><img src="sym/a4.png" alt="44"><br>Д</td>
+        <td onclick="copyc(this, 'Е');"><img src="sym/a5.png" alt="45"><br>Е</td> <td onclick="copyc(this, 'Ф');"><img src="sym/a6.png" alt="46"><br>Ф</td>
+        <td onclick="copyc(this, 'Г');"><img src="sym/a7.png" alt="47"><br>Г</td> <td onclick="copyc(this, 'Х');"><img src="sym/a8.png" alt="48"><br>Х</td>
+        <td onclick="copyc(this, 'И');"><img src="sym/a9.png" alt="49"><br>И</td> <td onclick="copyc(this, 'Й');"><img src="sym/aa.png" alt="4a"><br>Й</td>
+        <td onclick="copyc(this, 'К');"><img src="sym/ab.png" alt="4b"><br>К</td> <td onclick="copyc(this, 'Л');"><img src="sym/ac.png" alt="4c"><br>Л</td>
+        <td onclick="copyc(this, 'М');"><img src="sym/ad.png" alt="4d"><br>М</td> <td onclick="copyc(this, 'Н');"><img src="sym/ae.png" alt="4e"><br>Н</td>
+        <td onclick="copyc(this, 'О');"><img src="sym/af.png" alt="4f"><br>О</td>
+    </tr>
+    <tr><th>5x</th><td onclick="copyc(this, 'П');"><img src="sym/b0.png" alt="50"><br>П</td>
+        <td onclick="copyc(this, 'Я');"><img src="sym/b1.png" alt="51"><br>Я</td> <td onclick="copyc(this, 'Р');"><img src="sym/b2.png" alt="52"><br>Р</td>
+        <td onclick="copyc(this, 'С');"><img src="sym/b3.png" alt="53"><br>С</td> <td onclick="copyc(this, 'Т');"><img src="sym/b4.png" alt="54"><br>Т</td>
+        <td onclick="copyc(this, 'У');"><img src="sym/b5.png" alt="55"><br>У</td> <td onclick="copyc(this, 'Ж');"><img src="sym/b6.png" alt="56"><br>Ж</td>
+        <td onclick="copyc(this, 'В');"><img src="sym/b7.png" alt="57"><br>В</td> <td onclick="copyc(this, 'Ь');"><img src="sym/b8.png" alt="58"><br>Ь</td>
+        <td onclick="copyc(this, 'Ы');"><img src="sym/b9.png" alt="59"><br>Ы</td> <td onclick="copyc(this, 'З');"><img src="sym/ba.png" alt="5a"><br>З</td>
+        <td onclick="copyc(this, 'Ш');"><img src="sym/bb.png" alt="5b"><br>Ш</td> <td onclick="copyc(this, 'Э');"><img src="sym/bc.png" alt="5c"><br>Э</td>
+        <td onclick="copyc(this, 'Щ');"><img src="sym/bd.png" alt="5d"><br>Щ</td> <td onclick="copyc(this, 'Ч');"><img src="sym/be.png" alt="5e"><br>Ч</td>
+        <td class="una" onclick="copyc(this, '█');"><img src="sym/7f.png" alt="5f"><br>█</td>
+    </tr>
+</table>
+
+<p style="text-align: left;">
+    &nbsp;&nbsp;&nbsp;&nbsp;Characters marked in <span style="color: darkred;"><b>red</b></span> <b>cannot</b> be entered using the encrypter <b>keyboard</b>,
+    therefore, there is <b>no way</b> to <b>physically</b> input them.
+</p>
+
+<hr>
+<h3 style="margin-top: 5px;margin-bottom: 5px;">Menu</h3>
+<a class="menulink" href="help.html">Main page</a>
+<a class="menulink" href="interface.html">Emulator interface</a><br>
+<a class="menulink" href="panel.html">Working with the options panel</a>
+<a class="menulink" href="debug.html">Working with the Debugger</a>
+<a class="menulink" href="xchg.html">Working with the Xchanger</a><br>
+<span class="menulink">Unofficial manual for MK85C</span><br>
+<a class="menulink" href="faq.html">Frequently asked questions (FAQ)</a>
+<hr>
+
+<script>
+    function copyc(obj, char) {
+        obj.style.backgroundColor="LightGreen";
+        navigator.clipboard.writeText(char);
+        setTimeout(function(obj){obj.style.backgroundColor="";}, 500, obj);
+    }
+</script>
+</body>
+</html> 

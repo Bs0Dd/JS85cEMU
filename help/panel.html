@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JS85cEMU Help</title>
+<meta charset="UTF-8">
+<style>
+    body {text-align: center;}
+
+    .menulink {
+        padding-left: 10px;
+        padding-right: 10px;
+        font-weight: bold;
+    }
+</style>
+</head>
+<body>
+
+<h1>JS85cEMU Help</h1>
+
+<h3><a href="panel_ru.html">Русский</a></h3>
+
+<hr>
+<h3 style="margin-top: 5px;margin-bottom: 5px;">Menu</h3>
+<a class="menulink" href="help.html">Main page</a>
+<a class="menulink" href="interface.html">Emulator interface</a><br>
+<span class="menulink">Working with the options panel</span>
+<a class="menulink" href="debug.html">Working with the Debugger</a>
+<a class="menulink" href="xchg.html">Working with the Xchanger</a><br>
+<a class="menulink" href="uman.html">Unofficial manual for MK85C</a><br>
+<a class="menulink" href="faq.html">Frequently asked questions (FAQ)</a>
+<hr>
+
+<h3>Options panel</h3>
+
+<img src="panel.png" alt="panel"><br>
+
+<p style="text-align: left;">
+    &nbsp;&nbsp;&nbsp;&nbsp;The <b>options panel</b> is a tool for <b>configuring</b> and <b>managing</b> the emulator,
+    allowing you to modify <b>basic parameters</b> that affect the behavior of the <b>virtual encryptor</b>.<br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;The panel consists of <b>4 sections</b> with parameters grouped according to <b>common characteristics</b>.
+</p><br>
+
+<h4>Speed configuration section</h4>
+
+<img src="p1.png" alt="p1"><br>
+ 
+<p style="text-align: left;">
+    &nbsp;&nbsp;&nbsp;&nbsp;This section allows you to switch the <b>speed modes</b> of the encryptor and change the <b>speed</b> of these modes.<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;The first line (<b>"Speed"</b>) shows the <b>current state</b> of the processor.
+    It can be normal (<b>"Normal"</b>) or accelerated (<b>"Turbo"</b>).
+    The <b>8x clock divider</b> can also be enabled (<b>"(8x slowed by freq. divider)"</b>) or the processor clock can be <b>stopped</b> ("<b>(clock stopped)</b>").<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;The <b>"Standard"</b> and <b>"Turbo"</b> lines are used to change the speed of the <b>normal</b> and <b>turbo</b> modes, respectively.
+    The default speed for <b>normal</b> mode is <b>25000</b> operations per second and <b>120000</b> operations per second for <b>turbo</b>.
+    These values are <b>close</b> to real encryptors (the speed in them <b>floats</b> from device to device,
+    which is a consequence of the <b>imperfection</b> (scatter) of the resistors used in the <b>RC clock circuit</b>, no <b>quartz resonators</b>),
+    therefore they are considered <b>nominal</b>. The <b>"Reset"</b> button for each mode will always set its <b>nominal</b> value.
+    To change (in the range from <b>100</b> to <b>1000000</b> operations per second), just enter the desired value in the <b>input field</b> and click <b>"Set"</b>.<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;The <b>"Change speed mode"</b> button allows you to change the mode using <b>hot swap</b> (<b>without rebooting</b> the emulator).
+    It is recommended to change the mode only when the device's <b>clock generator</b> is <b>stopped</b>.
+    If you make a change while <b>scanning the keyboard</b> or <b>outputting text</b>, the mode may <b>not switch</b>.
+    The <b>"Restart in turbo mode"</b> button restarts the emulator with the turbo mode <b>enabled</b>.<br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Unfortunately, the existing <b>firmware</b> of the MK85C, when accessing the <b>CPUC</b> register, constantly <b>resets</b> the turbo mode bit, so <b>it is not possible</b> to enable it.
+</p><br>
+
+<h4>Control section</h4>
+
+<img src="p2.png" alt="p2"><br>
+ 
+<p style="text-align: left;">
+    &nbsp;&nbsp;&nbsp;&nbsp;The section is used to <b>control</b> the operation of the emulator and switch <b>general functions</b>.
+    The <b>"Pause"</b> and <b>"Restart"</b> buttons, as the name suggests, are used to <b>pause</b> and <b>restart</b> the emulator.
+    The <b>"Vibro (keys)"</b> parameter turns on or off the <b>vibration</b> of the device (if it is <b>capable</b> of vibrating, which usually applies to <b>portable devices</b>)
+    when you press the <b>virtual keyboard</b> of the encryptor. On devices <b>without vibration capabilities</b>, the item <b>does not</b> perform any function.
+</p><br>
+
+<h4>Additional functions section</h4>
+
+<img src="p3.png" alt="p3"><br>
+ 
+<p style="text-align: left;">
+    &nbsp;&nbsp;&nbsp;&nbsp;The section contains buttons for opening <b>utilities</b> and information <b>windows</b>, as well as <b>debugging</b> parameters.<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;The <b>"Keyboard layout"</b> button opens a window with a computer keyboard <b>layout</b> diagram <b>adapted</b> for working with a virtual encryptor.
+    The <b>"Xchanger"</b> button opens the <a href="xchg.html"><b>Xchanger utility</b></a> panel.
+    The <b>"Debugger"</b> button opens the <a href="debug.html"><b>Debugger</b></a> panel.
+    The <b>"Help"</b> button opens a window with this <b>help</b>.
+    And the <b>"About"</b> button opens a window with <b>brief information</b> about the program and a <b>list of changes</b> (<b>Changelog</b>).<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;The <b>"Meaningful display"</b> parameter changes the <b>text segments</b> of the display (the MK85C uses a <b>standard</b> display,
+    but the segments have <b>different</b> purposes) so that they correspond to the <b>assigned</b> indication (<b>RUN -> РШФ</b> (DEC), <b>WRT -> ШИФ</b> (ENC), etc.).
+    The <b>"Force turbo"</b> parameter is used to <b>force</b> the turbo mode usage, since the <b>real device</b>, when turned on with the turbo mode,
+    is <b>not</b> actually in it <b>permanently</b>, but turns it off when <b>outputting text</b> on the display and <b>scanning</b> the keyboard.
+    Parameter <b>"Ignore frq. div."</b> forcibly disables the processor <b>clock divider</b> (<b>8</b> times), also used when <b>outputting text</b> on the display and <b>scanning</b> the keyboard.
+    The <b>"Disable soft poff"</b> parameter disables support for the <b>software switch</b> present in the processor, which allows the firmware to <b>turn off</b> the device.
+    The <b>"Show debug messages"</b> parameter allows <b>debug messages</b> to be shown in the console (via the <b>console.log</b> function).
+</p><br>
+
+<h4>Data loading and saving section</h4>
+
+<img src="p4.png" alt="p4"><br>
+ 
+<p style="text-align: left;">
+    &nbsp;&nbsp;&nbsp;&nbsp;In this section you can <b>load</b> or <b>save</b> <b>RAM</b> and <b>ROM</b> of the virtual encryptor.
+    The <b>"RAM/ROM file"</b> fields display the <b>names</b> of loaded files for RAM and ROM memory.
+    The inscription <b>"internal"</b> is shown if the built-in (<b>factory</b>) <b>ROM</b> is used or if the <b>RAM image</b> is created in the <b>emulator</b>.
+    To load RAM or ROM from a <b>binary file</b>, just <b>select the file</b> (using the <b>button</b> or via <b>Drag'n'Drop</b>) and click the <b>"Load RAM/ROM from file"</b> button.
+    In this case, for <b>RAM</b> the file must be <b>equal of 2KB</b>, for <b>ROM</b> - <b>multiple of 8KB</b>. ROM file <b>cannot</b> exceed <b>32KB</b>.
+    If the conditions are <b>not met</b>, the images will be automatically <b>expanded</b> to <b>multiples</b> of the corresponding numbers, or <b>trimmed</b> to <b>2KB / 32KB</b>.<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;To reset the <b>ROM image</b> to the <b>factory</b> one, just press the <b>"Reset ROM"</b> button.
+    <b>RAM</b> can be reset by pressing <b>"Clear RAM"</b> button. The <b>"Fast init"</b> button performs a <b>fast</b> initialization of RAM,
+    which allows you to <b>skip</b> the device test performed during <b>normal</b> initialization.<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;RAM can be <b>saved to disk</b> as a <b>binary file</b>.
+    This is done with the <b>"Save RAM"</b> button, and the file <b>"mk85c_ram.bin"</b> will be downloaded by the browser.<br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;The <b>"Switch to model Б/C"</b> button is used to switch the emulator between <b>MK85C</b> and <b>MK85Б</b> (banking) emulation modes.
+    The MK85Б (<b>very rare</b> even in comparison with the MK85C) has <b>other keys</b> in the number block (on the case it is still designated as <b>MK85C</b>),
+    is equipped with <b>4KB of RAM</b> and uses <b>its own firmware</b> to encrypt <b>bank advice</b>. It was used by employees of the <b>Central Bank of the Russian Federation</b>,
+    but unlike the MK85C, <b>it is not commercial</b>, and, according to some information, is intended only for <b>official use</b>.
+    For this reason, at <b>this</b> moment I can't add <b>ROM</b> to the emulator, so <b>mode Б</b> only changes <b>the appearance of the keys</b> and <b>expands the RAM</b>,
+    the firmware (<b>not available publicly</b>) must be loaded <b>manually</b>.
+</p>
+
+<hr>
+<h3 style="margin-top: 5px;margin-bottom: 5px;">Menu</h3>
+<a class="menulink" href="help.html">Main page</a>
+<a class="menulink" href="interface.html">Emulator interface</a><br>
+<span class="menulink">Working with the options panel</span>
+<a class="menulink" href="debug.html">Working with the Debugger</a>
+<a class="menulink" href="xchg.html">Working with the Xchanger</a><br>
+<a class="menulink" href="uman.html">Unofficial manual for MK85C</a><br>
+<a class="menulink" href="faq.html">Frequently asked questions (FAQ)</a>
+<hr>
+
+</body>
+</html> 

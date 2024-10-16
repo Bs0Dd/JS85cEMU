@@ -1,0 +1,56 @@
+*.unselectable {
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+
+   /*
+	 Introduced in IE 10.
+	 See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+   */
+   -ms-user-select: none;
+   user-select: none;
+}
+
+#mk85_panel, #mk85_dbg{
+   width : 760px;
+   background-color : gainsboro;
+}
+
+
+#mk85_panel_int, #mk85_dbg_int{
+   border: 1px solid black;
+   width : 100%;
+   height : 100%;
+}
+
+#mk85_panel_int > tr > td{
+   border: 1px solid black;
+   padding-left: 10px;
+   padding-top: 10px;
+   padding-bottom: 10px;
+}
+
+#mk85_dbg_int > tr > td{
+   border: 1px solid black;
+/*   padding-left: 10px;
+   padding-top: 10px;
+   padding-bottom: 10px;*/
+}
+
+#mk85_xchg {
+   width : 760px;
+}
+
+#mk85_xchg_int {
+   border : 1px solid black;
+   background-color : gainsboro;
+   padding-top: 10px;
+   padding-bottom: 10px;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+#dbg_actions td {
+  padding : 5px 10px 5px 10px;
+  border : 1px solid black;
+}

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Справка по JS85cEMU</title>
+<meta charset="UTF-8">
+<style>
+    body {text-align: center;}
+
+    .menulink {
+        padding-left: 10px;
+        padding-right: 10px;
+        font-weight: bold;
+    }
+
+    .una {
+        color: darkred;
+    }
+
+    #soot {
+        border: 1px solid black;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #soot th, #soot td {
+        border: 1px solid black;
+        padding-top: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+</style>
+</head>
+<body>
+
+<h1>Справка по JS85cEMU</h1>
+
+<h3><a href="xchg.html">English</a></h3>
+
+<hr>
+<h3 style="margin-top: 5px;margin-bottom: 5px;">Меню</h3>
+<a class="menulink" href="help_ru.html">Главная страница</a>
+<a class="menulink" href="interface_ru.html">Интерфейс эмулятора</a><br>
+<a class="menulink" href="panel_ru.html">Работа с панелью опций</a>
+<a class="menulink" href="debug_ru.html">Работа с Дебаггером</a>
+<span class="menulink">Работа с Xchanger</span><br>
+<a class="menulink" href="uman_ru.html">Неофициальное руководство для МК85С</a><br>
+<a class="menulink" href="faq_ru.html">Часто задаваемые вопросы (FAQ)</a>
+<hr>
+
+<h3>Утилита "Xchanger"</h3>
+
+<img src="xchg.png" alt="xchg"><br>
+ 
+<p style="text-align: left;">
+    &nbsp;&nbsp;&nbsp;&nbsp;Шифратор предназначен для <b>шифрования</b> и <b>расшифровки</b> данных.
+    Однако МК85С <b>не имеет</b> каких-либо доступных <b>портов</b> для обмена данными, поэтому текст можно ввести только с помощью <b>клавиатуры</b>, а результат нужно переписывать с <b>дисплея</b>.<br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Утилита <b>Xchanger</b> позволяет <b>автоматизировать ввод и извлечение</b> данных из шифратора, а также имеет <b>дополнительный</b> функционал.<br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Для ввода данных в шифратор необходимо нажать кнопку <b>"Send to MK"</b>. По умолчанию, данные передаются (подобно реальному использованию) через
+    <b>эмуляцию нажатий клавиш</b>. Это <b>надежный</b>, но очень <b>медленный</b> способ, плохо подходящий для ввода <b>больших</b> данных.
+    Параметр <b>"directly"</b> включает режим ввода данных <b>напрямую в ОЗУ</b>, при этом утилита <b>сама</b> получает нужные <b>адреса</b> и <b>параметры</b> для корректного ввода,
+    а затем <b>модифицирует</b> состояние виртуального шифратора. Этот режим также позволяет <b>вводить</b> символы, <b>недоступные</b> для ввода через <b>клавиатуру</b>,
+    но <b>присутствующие</b> в кодовой странице шифратора (модифицированная <b>КОИ-7</b>). В случае, если прямой ввод в ОЗУ <b>невозможен</b>, данные будут переданы через <b>эмуляцию нажатий клавиш</b>.
+    Утилита <b>различает</b>, какой <b>тип</b> данных (<b>символы</b> или <b>только цифры</b>) ожидает шифратор, автоматически <b>фильтруя</b> ввод (также <b>игнорируются</b> символы, <b>отсутствующие</b> в кодировке МК85С).<br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Кнопка <b>"Get result"</b> <b>извлекает</b> из шифратора <b>результат</b> шифровки или расшифровки. Утилита <b>автоматически</b> определяет <b>тип</b> данных (<b>символы</b> или <b>только цифры</b>).
+    Если считываются <b>числовые</b> данные, они <b>автоматически</b> разбиваются на <b>блоки</b> (группы), <b>длина</b> которых задается при <b>настройке</b> шифратора.<br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Кнопка <b>"Get DKL"</b> позволяет <b>извлечь</b> из устройства <b>текущий долговременный ключ</b> (ДКЛ), представляющий из себя <b>110</b> цифр (<b>100</b> цифр ключа и <b>10</b> цифр контрольной суммы), которые <b>всегда</b>
+    разбиты на <b>блоки</b> по <b>5</b> цифр.<br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Кнопка <b>"New DKL"</b> генерирует <b>новый долговременный ключ</b> с <b>корректной</b> контрольной суммой. <b>ВНИМАНИЕ</b>: для <b>генерации</b> ключа используется функция <b>Math.random()</b>.<br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Кнопки <b>"Copy"</b> и <b>"Clear"</b> служат, соответственно, для <b>копирования</b> и <b>очистки</b> находящихся в поле ввода данных.<br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Кнопка <b>"Close"</b> <b>закрывает</b> окно утилиты.
+</p><br>
+
+<h4>Таблица соотношений символов МК 85С и Unicode<br>
+<i style="font-size: 15px;font-weight: normal;">нажмите на символ, чтобы скопировать его</i></h4>
+
+
+<table id="soot">
+    <tr><th></th><th>x0</th><th>x1</th><th>x2</th><th>x3</th><th>x4</th><th>x5</th><th>x6</th><th>x7</th><th>x8</th><th>x9</th><th>xA</th><th>xB</th><th>xC</th><th>xD</th><th>xE</th><th>xF</th></tr>
+    <tr><th>0x</th><td onclick="copyc(this, ' ');"><img src="sym/20.png" alt="00"><br>&nbsp;</td>
+        <td class="una" onclick="copyc(this, '!');"><img src="sym/21.png" alt="01"><br>!</td> <td onclick="copyc(this, '&#34;');"><img src="sym/22.png" alt="02"><br>"</td>
+        <td class="una" onclick="copyc(this, '#');"><img src="sym/23.png" alt="03"><br>#</td> <td class="una" onclick="copyc(this, '$');"><img src="sym/24.png" alt="04"><br>$</td>
+        <td class="una" onclick="copyc(this, '%');"><img src="sym/25.png" alt="05"><br>%</td> <td class="una" onclick="copyc(this, '&');"><img src="sym/26.png" alt="06"><br>&</td>
+        <td class="una" onclick="copyc(this, '\'');"><img src="sym/27.png" alt="07"><br>'</td> <td onclick="copyc(this, '(');"><img src="sym/28.png" alt="08"><br>(</td>
+        <td onclick="copyc(this, ')');"><img src="sym/29.png" alt="09"><br>)</td> <td class="una" onclick="copyc(this, '*');"><img src="sym/2a.png" alt="0a"><br>*</td>
+        <td onclick="copyc(this, '+');"><img src="sym/2b.png" alt="0b"><br>+</td> <td onclick="copyc(this, ',');"><img src="sym/2c.png" alt="0c"><br>,</td>
+        <td onclick="copyc(this, '-');"><img src="sym/2d.png" alt="0d"><br>-</td> <td onclick="copyc(this, '.');"><img src="sym/2e.png" alt="0e"><br>.</td>
+        <td onclick="copyc(this, '/');"><img src="sym/2f.png" alt="0f"><br>/</td>
+    </tr>
+    <tr><th>1x</th><td onclick="copyc(this, '0');"><img src="sym/30.png" alt="10"><br>0</td>
+        <td onclick="copyc(this, '1');"><img src="sym/31.png" alt="11"><br>1</td> <td onclick="copyc(this, '2');"><img src="sym/32.png" alt="12"><br>2</td>
+        <td onclick="copyc(this, '3');"><img src="sym/33.png" alt="13"><br>3</td> <td onclick="copyc(this, '4');"><img src="sym/34.png" alt="14"><br>4</td>
+        <td onclick="copyc(this, '5');"><img src="sym/35.png" alt="15"><br>5</td> <td onclick="copyc(this, '6');"><img src="sym/36.png" alt="16"><br>6</td>
+        <td onclick="copyc(this, '7');"><img src="sym/37.png" alt="17"><br>7</td> <td onclick="copyc(this, '8');"><img src="sym/38.png" alt="18"><br>8</td>
+        <td onclick="copyc(this, '9');"><img src="sym/39.png" alt="19"><br>9</td> <td onclick="copyc(this, ':');"><img src="sym/3a.png" alt="1a"><br>:</td>
+        <td class="una" onclick="copyc(this, ';');"><img src="sym/3b.png" alt="1b"><br>;</td> <td class="una" onclick="copyc(this, '<');"><img src="sym/3c.png" alt="1c"><br>&lt;</td>
+        <td class="una" onclick="copyc(this, '=');"><img src="sym/3d.png" alt="1d"><br>=</td> <td class="una" onclick="copyc(this, '>');"><img src="sym/3e.png" alt="1e"><br>&gt;</td>
+        <td onclick="copyc(this, '?');"><img src="sym/3f.png" alt="1f"><br>?</td>
+    </tr>
+    <tr><th>2x</th><td onclick="copyc(this, '@');"><img src="sym/40.png" alt="20"><br>@</td>
+        <td onclick="copyc(this, 'A');"><img src="sym/41.png" alt="21"><br>A</td> <td onclick="copyc(this, 'B');"><img src="sym/42.png" alt="22"><br>B</td>
+        <td onclick="copyc(this, 'C');"><img src="sym/43.png" alt="23"><br>C</td> <td onclick="copyc(this, 'D');"><img src="sym/44.png" alt="24"><br>D</td>
+        <td onclick="copyc(this, 'E');"><img src="sym/45.png" alt="25"><br>E</td> <td onclick="copyc(this, 'F');"><img src="sym/46.png" alt="26"><br>F</td>
+        <td onclick="copyc(this, 'G');"><img src="sym/47.png" alt="27"><br>G</td> <td onclick="copyc(this, 'H');"><img src="sym/48.png" alt="28"><br>H</td>
+        <td onclick="copyc(this, 'I');"><img src="sym/49.png" alt="29"><br>I</td> <td onclick="copyc(this, 'J');"><img src="sym/4a.png" alt="2a"><br>J</td>
+        <td onclick="copyc(this, 'K');"><img src="sym/4b.png" alt="2b"><br>K</td> <td onclick="copyc(this, 'L');"><img src="sym/4c.png" alt="2c"><br>L</td>
+        <td onclick="copyc(this, 'M');"><img src="sym/4d.png" alt="2d"><br>M</td> <td onclick="copyc(this, 'N');"><img src="sym/4e.png" alt="2e"><br>N</td>
+        <td onclick="copyc(this, 'O');"><img src="sym/4f.png" alt="2f"><br>O</td>
+    </tr>
+    <tr><th>3x</th><td onclick="copyc(this, 'P');"><img src="sym/50.png" alt="30"><br>P</td>
+        <td onclick="copyc(this, 'Q');"><img src="sym/51.png" alt="31"><br>Q</td> <td onclick="copyc(this, 'R');"><img src="sym/52.png" alt="32"><br>R</td>
+        <td onclick="copyc(this, 'S');"><img src="sym/53.png" alt="33"><br>S</td> <td onclick="copyc(this, 'T');"><img src="sym/54.png" alt="34"><br>T</td>
+        <td onclick="copyc(this, 'U');"><img src="sym/55.png" alt="35"><br>U</td> <td onclick="copyc(this, 'V');"><img src="sym/56.png" alt="36"><br>V</td>
+        <td onclick="copyc(this, 'W');"><img src="sym/57.png" alt="37"><br>W</td> <td onclick="copyc(this, 'X');"><img src="sym/58.png" alt="38"><br>X</td>
+        <td onclick="copyc(this, 'Y');"><img src="sym/59.png" alt="39"><br>Y</td> <td onclick="copyc(this, 'Z');"><img src="sym/5a.png" alt="3a"><br>Z</td>
+        <td onclick="copyc(this, '[');"><img src="sym/5b.png" alt="3b"><br>[</td> <td onclick="copyc(this, 'Ъ');"><img src="sym/1e.png" alt="3c"><br>Ъ</td>
+        <td onclick="copyc(this, ']');"><img src="sym/5d.png" alt="3d"><br>]</td> <td onclick="copyc(this, '…');"><img src="sym/0a.png" alt="3e"><br>…</td>
+        <td onclick="copyc(this, 'Ё');"><img src="sym/bf.png" alt="3f"><br>Ё</td>
+    </tr>
+    <tr><th>4x</th><td onclick="copyc(this, 'Ю');"><img src="sym/a0.png" alt="40"><br>Ю</td>
+        <td onclick="copyc(this, 'А');"><img src="sym/a1.png" alt="41"><br>А</td> <td onclick="copyc(this, 'Б');"><img src="sym/a2.png" alt="42"><br>Б</td>
+        <td onclick="copyc(this, 'Ц');"><img src="sym/a3.png" alt="43"><br>Ц</td> <td onclick="copyc(this, 'Д');"><img src="sym/a4.png" alt="44"><br>Д</td>
+        <td onclick="copyc(this, 'Е');"><img src="sym/a5.png" alt="45"><br>Е</td> <td onclick="copyc(this, 'Ф');"><img src="sym/a6.png" alt="46"><br>Ф</td>
+        <td onclick="copyc(this, 'Г');"><img src="sym/a7.png" alt="47"><br>Г</td> <td onclick="copyc(this, 'Х');"><img src="sym/a8.png" alt="48"><br>Х</td>
+        <td onclick="copyc(this, 'И');"><img src="sym/a9.png" alt="49"><br>И</td> <td onclick="copyc(this, 'Й');"><img src="sym/aa.png" alt="4a"><br>Й</td>
+        <td onclick="copyc(this, 'К');"><img src="sym/ab.png" alt="4b"><br>К</td> <td onclick="copyc(this, 'Л');"><img src="sym/ac.png" alt="4c"><br>Л</td>
+        <td onclick="copyc(this, 'М');"><img src="sym/ad.png" alt="4d"><br>М</td> <td onclick="copyc(this, 'Н');"><img src="sym/ae.png" alt="4e"><br>Н</td>
+        <td onclick="copyc(this, 'О');"><img src="sym/af.png" alt="4f"><br>О</td>
+    </tr>
+    <tr><th>5x</th><td onclick="copyc(this, 'П');"><img src="sym/b0.png" alt="50"><br>П</td>
+        <td onclick="copyc(this, 'Я');"><img src="sym/b1.png" alt="51"><br>Я</td> <td onclick="copyc(this, 'Р');"><img src="sym/b2.png" alt="52"><br>Р</td>
+        <td onclick="copyc(this, 'С');"><img src="sym/b3.png" alt="53"><br>С</td> <td onclick="copyc(this, 'Т');"><img src="sym/b4.png" alt="54"><br>Т</td>
+        <td onclick="copyc(this, 'У');"><img src="sym/b5.png" alt="55"><br>У</td> <td onclick="copyc(this, 'Ж');"><img src="sym/b6.png" alt="56"><br>Ж</td>
+        <td onclick="copyc(this, 'В');"><img src="sym/b7.png" alt="57"><br>В</td> <td onclick="copyc(this, 'Ь');"><img src="sym/b8.png" alt="58"><br>Ь</td>
+        <td onclick="copyc(this, 'Ы');"><img src="sym/b9.png" alt="59"><br>Ы</td> <td onclick="copyc(this, 'З');"><img src="sym/ba.png" alt="5a"><br>З</td>
+        <td onclick="copyc(this, 'Ш');"><img src="sym/bb.png" alt="5b"><br>Ш</td> <td onclick="copyc(this, 'Э');"><img src="sym/bc.png" alt="5c"><br>Э</td>
+        <td onclick="copyc(this, 'Щ');"><img src="sym/bd.png" alt="5d"><br>Щ</td> <td onclick="copyc(this, 'Ч');"><img src="sym/be.png" alt="5e"><br>Ч</td>
+        <td class="una" onclick="copyc(this, '█');"><img src="sym/7f.png" alt="5f"><br>█</td>
+    </tr>
+</table>
+
+<p style="text-align: left;">
+    &nbsp;&nbsp;&nbsp;&nbsp;Символы, отмеченные <span style="color: darkred;"><b>красным</b></span>, <b>недоступны</b> для ввода с помощью
+    <b>клавиатуры</b> шифратора, поэтому способа их <b>физического</b> ввода <b>не существует</b>.
+</p>
+
+<hr>
+<h3 style="margin-top: 5px;margin-bottom: 5px;">Меню</h3>
+<a class="menulink" href="help_ru.html">Главная страница</a>
+<a class="menulink" href="interface_ru.html">Интерфейс эмулятора</a><br>
+<a class="menulink" href="panel_ru.html">Работа с панелью опций</a>
+<a class="menulink" href="debug_ru.html">Работа с Дебаггером</a>
+<span class="menulink">Работа с Xchanger</span><br>
+<a class="menulink" href="uman_ru.html">Неофициальное руководство для МК85С</a><br>
+<a class="menulink" href="faq_ru.html">Часто задаваемые вопросы (FAQ)</a>
+<hr>
+
+<script>
+    function copyc(obj, char) {
+        obj.style.backgroundColor="LightGreen";
+        navigator.clipboard.writeText(char);
+        setTimeout(function(obj){obj.style.backgroundColor="";}, 500, obj);
+    }
+</script>
+</body>
+</html> 
