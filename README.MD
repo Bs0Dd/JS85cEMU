@@ -4,7 +4,7 @@
 
 **JS85cEMU** is an emulator of the rare Soviet **encryptor** called **Elektronika MK85C**.
 
-2024 © Bs0Dd 
+2024, 2025 © Bs0Dd (Compys S&N Systems)
 
 ### Based on [js-mk85](https://github.com/KP1533TM2/js-mk85) emulator
 2016 © Alexei Gordeev a.k.a. KP1533TM2
